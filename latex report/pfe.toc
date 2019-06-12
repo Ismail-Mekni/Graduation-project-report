@@ -34,22 +34,22 @@
 \contentsline {chapter}{\numberline {3}Design of the Physical and Logical Architectures}{24}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Introduction}{24}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Physical architecture}{24}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Logical architecture}{24}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Conceptual model}{24}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Modular decomposition}{24}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Broadband supervision and monitoring theory}{24}{subsection.3.3.3}% 
-\contentsline {section}{\numberline {3.4}Conclusion}{24}{section.3.4}% 
-\contentsline {chapter}{\numberline {4}Project Achievements}{25}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Introduction}{26}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Developing environment}{26}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Hardware envionment}{26}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Software environment}{26}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}Frameworks and technologies}{26}{subsection.4.2.3}% 
-\contentsline {section}{\numberline {4.3}Achieved work}{26}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Authentication and users management}{26}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Devices management}{26}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Metrics and tests management}{26}{subsection.4.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Statistics and dashboard management}{26}{subsection.4.3.4}% 
-\contentsline {subsection}{\numberline {4.3.5}Alerts management}{26}{subsection.4.3.5}% 
-\contentsline {section}{\numberline {4.4}Conclusion}{26}{section.4.4}% 
-\contentsline {chapter}{\numberline {5}General Conclusion and Future Work}{27}{chapter.5}% 
+\contentsline {section}{\numberline {3.3}Logical architecture}{26}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Conceptual model}{26}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Modular decomposition}{28}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Broadband supervision and monitoring theory}{28}{subsection.3.3.3}% 
+\contentsline {section}{\numberline {3.4}Conclusion}{28}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Project Achievements}{29}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction}{30}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Developing environment}{30}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Hardware envionment}{30}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Software environment}{30}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Frameworks and technologies}{30}{subsection.4.2.3}% 
+\contentsline {section}{\numberline {4.3}Achieved work}{30}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Authentication and users management}{30}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Devices management}{30}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Metrics and tests management}{30}{subsection.4.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Statistics and dashboard management}{30}{subsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.3.5}Alerts management}{30}{subsection.4.3.5}% 
+\contentsline {section}{\numberline {4.4}Conclusion}{30}{section.4.4}% 
+\contentsline {chapter}{\numberline {5}General Conclusion and Future Work}{31}{chapter.5}% 

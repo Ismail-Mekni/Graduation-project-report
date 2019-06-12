@@ -78,7 +78,8 @@
 \begin{center}
 % Upper part of the page
 \begin{minipage}{0.4\textwidth}    \end{minipage}
-\begin{minipage}{0.4\textwidth} \begin{flushright} Academic year : 2018-2019 \end{flushright}\end{minipage}
+\centerline{{{\fontfamily{cmr}  Academic year : 2018-2019}}}
+%\begin{minipage}{0.4\textwidth} \begin{flushright} Academic year : 2018-2019 \end{flushright}\end{minipage}
 \rule[0.5ex]{1\columnwidth}{1pt}\\[0.5cm]
 \textsc{\large{University of Sousse}}\\
 \textsc{\large{National School of Engineering of Sousse}}\\
@@ -539,12 +540,58 @@ The next chapter aims to go a step further in the process of developing the appl
 \chapter{Design of the Physical and Logical Architectures}
 
 \section{Introduction}
+In order to reach the appropriate result as described in the specifications, we need to clarify the project’s main architecture as well as the architecture of its components. This chapter will focuses on designing a suitable structure for the smart parking system. This step is considered as the most crucial of the process because it prepares the ground for the implementation phase.
+
 \section{Physical architecture}
+The architecture presented in (fig.\ref{fig:physicalarchitecture}) is the physical architecture of our system. 
+It represents the physical layout of our system and its components in a global diagram and it refers to some representations of the structure or organization of the physical elements that build the system.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=25cm]{physicalarchitecture.png}
+\caption{Physical Architecture of SMAQ Probes solution}
+\label{fig:physicalarchitecture}
+\end{figure}
+
+This architecture describes the main components of the system and how they interact in order to achieve the objectives mentioned in the previous chapter.
+
+The system is composed mainly from the following parts: the probes (Raspberry Pi boards), the user interface (web browser) and the cloud server including Kafka cluster, the database management system and our web application.
+
+The probes represent the entity that executes the scheduled tests and sends the metrics to Kafka cluster through the Google protocol buffer.
+
+The client web part represents the part with which the final users interacts and they are essentially: the Web platform accessible by the application users, application administrator, network supervisors and network and broadband administrators.
+
+The third part, the cloud server, is where the application will be hosted, this part is responsible for receiving and processing data coming from Kafka cluster, also it is responsible for data analysis and configurations persistent to our database.
+
 \section{Logical architecture}
 \subsection{Conceptual model}
+The (fig.\ref{fig:logicalarchitecture}) shows the logical architecture of the system.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=25cm]{logicalarchitecture.png}
+\caption{Logical architecture}
+\label{fig:logicalarchitecture}
+\end{figure}
+
+According to the figure of the logical architecture, the system is composed from three major parts:
+\begin{itemize}
+\item	Probes: this parts represents widespread devices, these devices are the entities that handles tests. There are several scripts responsible for running the tests with efficient schedules. All the messages are serialized with Google Protocol Buffer. There is a Kafka client responsible for publishing and receiving messages.
+\item	Cloud server: this server is the entity that holds the application logic. It holds within him a Google Protocol Buffer converter. Kafka stream is the layer that process the received data in real-time with high performance. Spring Boot application is a three tiers web application, it is responsible for managing the features of our system including metrics analytics.
+\item	Angular: this entity is the frontend application accessible to users across the Web.
+\end{itemize}
+
+The connection between the web application and the user interface is guaranteed through HTTP protocol and REST web services.
+
+Kafka cluster is playing the role of a middleware between the probes and the backend server.
+
+Finally we have our database, we have chosen MongDB as a database management system for performance reasons, and it is accessible only through the three tiers web application.
+
+
 \subsection{Modular decomposition}
 \subsection{Broadband supervision and monitoring theory}
 \section{Conclusion}
+Through this chapter, we described each part of the solution, its functionalities both separately and when coordinating with other parts of the system. We also explained subsequently the choice of our logical and physical architecture. Concerning the detailed design, we exhibited the class and sequence diagram. In the next chapter, we present and expose the technologies employed during the process of the creation of our product.
 
 \chapter{Project Achievements}
 
