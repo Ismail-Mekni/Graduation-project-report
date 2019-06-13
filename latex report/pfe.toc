@@ -37,19 +37,28 @@
 \contentsline {section}{\numberline {3.3}Logical architecture}{26}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Conceptual model}{26}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Modular decomposition}{28}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Broadband supervision and monitoring theory}{28}{subsection.3.3.3}% 
-\contentsline {section}{\numberline {3.4}Conclusion}{28}{section.3.4}% 
-\contentsline {chapter}{\numberline {4}Project Achievements}{29}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Introduction}{30}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Developing environment}{30}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Hardware envionment}{30}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Software environment}{30}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}Frameworks and technologies}{30}{subsection.4.2.3}% 
-\contentsline {section}{\numberline {4.3}Achieved work}{30}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Authentication and users management}{30}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Devices management}{30}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Metrics and tests management}{30}{subsection.4.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Statistics and dashboard management}{30}{subsection.4.3.4}% 
-\contentsline {subsection}{\numberline {4.3.5}Alerts management}{30}{subsection.4.3.5}% 
-\contentsline {section}{\numberline {4.4}Conclusion}{30}{section.4.4}% 
-\contentsline {chapter}{\numberline {5}General Conclusion and Future Work}{31}{chapter.5}% 
+\contentsline {subsubsection}{\numberline {3.3.2.1}Class diagram of entities}{28}{subsubsection.3.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2.2}Package diagram}{30}{subsubsection.3.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.3.2.3}Devices management module}{30}{subsubsection.3.3.2.3}% 
+\contentsline {subsubsection}{\numberline {3.3.2.4}Metrics and tests management module}{30}{subsubsection.3.3.2.4}% 
+\contentsline {subsubsection}{\numberline {3.3.2.5}Network monitoring management module}{30}{subsubsection.3.3.2.5}% 
+\contentsline {subsubsection}{\numberline {3.3.2.6}Statistics and charts management module}{30}{subsubsection.3.3.2.6}% 
+\contentsline {subsubsection}{\numberline {3.3.2.7}Authentication and users management module}{30}{subsubsection.3.3.2.7}% 
+\contentsline {subsection}{\numberline {3.3.3}Broadband supervision and monitoring theory}{30}{subsection.3.3.3}% 
+\contentsline {section}{\numberline {3.4}Conclusion}{30}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Project Achievements}{32}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction}{32}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Developing environment}{32}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Hardware envionment}{32}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Software environment}{33}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.3}Frameworks and technologies}{34}{subsection.4.2.3}% 
+\contentsline {paragraph}{Programming languages}{34}{section*.11}% 
+\contentsline {paragraph}{Frameworks and technologies}{34}{section*.12}% 
+\contentsline {section}{\numberline {4.3}Achieved work}{36}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Authentication and users management}{36}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Devices management}{36}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Metrics and tests management}{36}{subsection.4.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Statistics and dashboard management}{36}{subsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.3.5}Alerts management}{36}{subsection.4.3.5}% 
+\contentsline {section}{\numberline {4.4}Conclusion}{36}{section.4.4}% 
+\contentsline {chapter}{\numberline {5}General Conclusion and Future Work}{37}{chapter.5}% 

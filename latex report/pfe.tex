@@ -371,7 +371,7 @@ As shown in the general use case diagram (fig.\ref{fig:usecasegeneral}), only th
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm, height=14cm]{manage-device-sequece-diagram.png}
+\includegraphics[width=15cm, height=13cm]{manage-device-sequece-diagram.png}
 \caption{Devices management sequence diagram}
 \label{fig:devicesequence}
 \end{figure}
@@ -402,7 +402,7 @@ As shown in the devices management sequence diagram (fig.\ref{fig:devicesequence
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm, height=14cm]{tests-management-sequence-diagram.png}
+\includegraphics[width=15cm, height=13cm]{tests-management-sequence-diagram.png}
 \caption{Tests management sequence diagram}
 \label{fig:testsequence}
 \end{figure}
@@ -589,6 +589,31 @@ Finally we have our database, we have chosen MongDB as a database management sys
 
 
 \subsection{Modular decomposition}
+\subsubsection{Class diagram of entities}
+The (fig.\ref{fig:generalclassdiagram}) shows the class diagram of our system, this diagram summarizes relationships between our entities in the database.
+This class diagram is efficient in the case of MongoDB database management system. MongoDB is an oriented document database management system.
+\begin{figure}[H]
+\centering
+\includegraphics[height=25cm]{generalclassdiagram.png}
+\caption{Database entities class diagram}
+\label{fig:generalclassdiagram}
+\end{figure}
+
+\subsubsection{Package diagram}
+The package diagram is a static view that serves to globally describe the different components of the application. The (fig.\ref{fig:packagediagram}) presents the package diagram of our solution to have an overview its different elements.
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{packagediagram.png}
+\caption{Package diagram of the backend application}
+\label{fig:packagediagram}
+\end{figure}
+
+\subsubsection{Devices management module}
+\subsubsection{Metrics and tests management module}
+\subsubsection{Network monitoring management module}
+\subsubsection{Statistics and charts management module}
+\subsubsection{Authentication and users management module}
+
 \subsection{Broadband supervision and monitoring theory}
 \section{Conclusion}
 Through this chapter, we described each part of the solution, its functionalities both separately and when coordinating with other parts of the system. We also explained subsequently the choice of our logical and physical architecture. Concerning the detailed design, we exhibited the class and sequence diagram. In the next chapter, we present and expose the technologies employed during the process of the creation of our product.
@@ -596,10 +621,65 @@ Through this chapter, we described each part of the solution, its functionalitie
 \chapter{Project Achievements}
 
 \section{Introduction}
+In this chapter, we will discuss the process of implementing the different parts of the system. We start by presenting the different tools both software and hardware used in every task in order to complete the implementation process.
+
 \section{Developing environment}
 \subsection{Hardware envionment}
+To achieve our project, we have used a DELL computer with a Windows 7 operating system. The characteristics of the used computer are provided below:
+\begin{itemize}
+\item	CPU: intel i5 2.3 Ghz
+\item	RAM: 8 GB
+\item	Hard Disk Drive: 500 GB
+\end{itemize}
+For the probes, we have used Raspberry Pi 3 B+ model with an embedded Raspbian operation system. The characteristics of the board are provided below:
+\begin{itemize}
+\item   CPU: 64-bit quad-core ARM v8
+\item	RAM: 1 GB
+\item	Memory card: 16 GB
+\end{itemize}
+
 \subsection{Software environment}
+In this part, we list the software programs and applications we used throughout the development of our system.
+\begin{itemize}
+\item	Netbeans IDE 8.2: Netbeans is an integrated development environment developed by Oracle. Netbeans can be used with many programming languages; in our case we used it with Java programming language. Netbeans put in our hand many features to help developers achieving better coding performance.
+\item	Visual studio code: Visual studio code is MIT open source licensed software, developed and maintained by Microsoft. It supports many programming languages with many different technologies just by integrating plugins within it. We used Visual studio code for Angular development. This software supports different platforms, Linux operation system, Windows, MacOS.
+\item	Code Blocks IDE: Code Blocks is an integrated development environment for Fortan, C and C++ programming languages. We used it for C programming.  
+\item	MongoDB: MongoDB is a non-relational database management system based in documents. It provides many advanced features like indexing and advanced operations algorithm to query on the documents. 	To generate analytics with high performance, we need a database that supports well indexes; also we need a database that provides different and flexible querying techniques like map and reduce algorithm. So the better choice for us was MongoDB.
+\item	Apache Tomcat web server: Tomcat is a web server that supports Java web logic. In our case used an embedded Tomcat web server.
+\item	Postman: Postman allows users to execute and build personalized HTTP requests; to achieve this Postman provides many optional features.
+\item	Thonny: Thonny is an integrated development environment for Python programming language running on Raspbian operating system. We used it to develop our Python scripts.
+\item	Geny: Geny is an integrated development environment that supports many programming languages. This software is running on Raspbian operating system. We used it to develop C programs on RaspBerry Pi board.
+\end{itemize}
+
 \subsection{Frameworks and technologies}
+In this section, we discuss the technical choices we made to achieve our final product. We start by presenting the programming languages used in the development of the project. Afterwards, we defend our choice for the frameworks we used.
+\paragraph{Programming languages}
+~\\
+\begin{itemize}
+\item	Java: Java is a general purpose oriented object programming language. We used it to develop the backend of our solution.
+\item	Typescript: Typescript is a programming language developed and maintained by Microsoft. Typescript is an object oriented programming language. We used it to develop our frontend application with Angular.
+\item	Python: Python is a general purpose, high-level programming language. We used it in an embedded environment with Raspberry Pi boards.
+\item	C: C is a procedural and a general purpose programming language. We used it in an embedded environment, with Raspberry Pi boards.
+\item	Shell script: Shell script is a command line interpreter. We used it to install our embedded application.
+\end{itemize}
+
+\paragraph{Frameworks and technologies}
+~\\
+\begin{itemize}
+\item	Spring framework: Spring is a Java application framework. Spring allows users to create enterprise services with POJO (Plain Old Java Objects). Spring uses dependency injection technique; also it provides many application configuration features.
+\item	Spring data MongoDB: Spring data MongoDB is a part of Spring data project which aims to provide a Spring-based APIs (Application Programming Interfaces) for new datastores such as MongoDB. It gives the possibility to execute complex queries on MongoDB, especially with Mongo Template.
+\item	Angular 7: Angular is an open source framework developed by Google. Angular is used for frontend application development, it gives the possibility to handle dynamically user interface. Angular is written entirely in Javascript, although it used Typescript as programming language.
+\item	Apache Kafka: Kafka is distributed, fault-tolerant, horizontally scalable, wicked fast streaming platform. It is used for building real-time data pipelines and streaming applications with publish and subscribe technique. We used it as a middleware between widespread probes and the backend application.
+\item	Kafka Stream: Kafka stream is a client library for building applications where the input and output data messages are stored in Kafka cluster or broker. It allows run real-time processing on the data. We used it for real-time processing.
+•	Google protocol buffer: Protocol buffer is a protocol for structured data serializing, Protocol buffer, also known as Protobuf, supports several programming language such as Java, Objective-C, Python and C++.We used it to on the messages coming from the probes. We used this protocol because it is faster than the ordinary data format like JSON.
+\item	OAuth 2.0: OAuth is a protocol for authorization flows for web application. It is simple for developers to use. We used it for security issues in our web application.
+\item	Spring Security: Spring Security is a framework to build applications with powerful and highly customizable authentication and access control.
+\item	Linux Crontab: Crontab is a tool for job and task scheduling on Linux operating system, in our case Raspbian. We used it to schedule test running.
+\item	MXparser: MXparser is a library for mathematical expressions parsing and evaluating. We used it with application features that need formula parsing such the case of alerting constraints.
+\item	Bootstrap: Bootstrap is an open source frontend library created by Twitter for developing with HTML, CSS and Javascript in order to build responsive, mobile-first projects.
+\end{itemize}
+
+
 \section{Achieved work}
 \subsection{Authentication and users management}
 \subsection{Devices management}
@@ -607,6 +687,8 @@ Through this chapter, we described each part of the solution, its functionalitie
 \subsection{Statistics and dashboard management}
 \subsection{Alerts management}
 \section{Conclusion}
+uring this chapter, we presented the technologies that were chosen to implement our project and we argued that choice. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
+
 \chapter{General Conclusion and Future Work}
 
 
