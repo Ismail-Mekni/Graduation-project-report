@@ -83,7 +83,7 @@
 \rule[0.5ex]{1\columnwidth}{1pt}\\[0.5cm]
 \textsc{\large{University of Sousse}}\\
 \textsc{\large{National School of Engineering of Sousse}}\\
-%\includegraphics[width=0.3\textwidth]{logo.png}\\[-0.5cm]
+\includegraphics[width=0.3\textwidth]{logo.pdf}\\[-0.5cm]
 \Large{Graduation project report}\\[0.5cm]
 \Large{ \bfseries{Applied Computer Engineering}}\\
 \normalsize{Option: Distributed Systems}\\
@@ -198,7 +198,7 @@ This step is essential to propose our solution in the relation to those offered 
 
 \subsection{State of the art}
 \subsubsection{SamKnows One}
-The SamKnows One is a cloud-based analytics platform that includes a full range of measurement agents for fixed and cellular internet connection with a global test infrastructure. The SamKnows solution stores and visualizes performance data in real-time. This solution is implemented by a UK company “Sam” founded in 2008 by Sam Crawford. SamKnows One has developed a suite of tests as follows:
+The SamKnows One is a cloud-based analytics platform that includes a full range of measurement agents for fixed and cellular internet connection with a global test infrastructure. The SamKnows solution stores and visualizes performance data in real-time. This solution is implemented by a UK company “Sam” founded in 2008 by Sam Crawford. SamKnows One has developed a suite of tests\cite{SAMKNOWS} as follows:
 \begin{itemize}
 \item	Speed tests: includes download and upload over TCP and UDP speed tests.
 \item	Latency, loss and jitter: latency, jitter and packet loss 	over UDP, latency over HTML5.
@@ -275,7 +275,6 @@ During the work on our solution we used UML “Unified Modeling Language” for 
 \item	Sequence diagram: it is a time focus representation of objects and their interactions.
 \item	Package diagram: it gives an overview of the application packages. It is a high abstraction that presents the application modularity.
 \item	Class diagram: it gives a presentation of classes and interfaces of our system and relations between them.
-\item	Activity diagram: it gives an overview of the dynamic aspects of the system.
 \end{itemize}
 
 \section{Software development methodology}
@@ -576,9 +575,9 @@ The (fig.\ref{fig:logicalarchitecture}) shows the logical architecture of the sy
 
 According to the figure of the logical architecture, the system is composed from three major parts:
 \begin{itemize}
-\item	Probes: this parts represents widespread devices, these devices are the entities that handles tests. There are several scripts responsible for running the tests with efficient schedules. All the messages are serialized with Google Protocol Buffer. There is a Kafka client responsible for publishing and receiving messages.
-\item	Cloud server: this server is the entity that holds the application logic. It holds within him a Google Protocol Buffer converter. Kafka stream is the layer that process the received data in real-time with high performance. Spring Boot application is a three tiers web application, it is responsible for managing the features of our system including metrics analytics.
-\item	Angular: this entity is the frontend application accessible to users across the Web.
+\item	Probes: this parts represents widespread devices, these devices are the entities that handles tests. There are several scripts responsible for running the tests with efficient schedules. All the messages are serialized with Google Protocol Buffer. There is a Kafka client responsible for publishing and receiving messages\cite{RDKAFKA}.
+\item	Cloud server: this server is the entity that holds the application logic. It holds within him a Google Protocol Buffer converter. Kafka stream is the layer that process the received data in real-time with high performance\cite{KAFKASTREAM}. Spring Boot application is a three tiers web application, it is responsible for managing the features of our system including metrics analytics.
+\item	Angular: this entity is the frontend application accessible to users across the Web\cite{ANGULAR}.
 \end{itemize}
 
 The connection between the web application and the user interface is guaranteed through HTTP protocol and REST web services.
@@ -609,12 +608,183 @@ The package diagram is a static view that serves to globally describe the differ
 \end{figure}
 
 \subsubsection{Devices management module}
+This module describes devices management process. This module is about 	editing, deleting, and checking available devices. There is no meaning of creating device because the device information will be sent by the device if it is connected.
+
+The following class diagram (fig.\ref{fig:deviceclassdiagram}) presents the involved classes and components that build the module.
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{deviceclassdiagram.png}
+\caption{Package diagram of the backend application}
+\label{fig:deviceclassdiagram}
+\end{figure}
+
+Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the update device operation:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{devicesequencediagram.png}
+\caption{Sequence diagram of device updating operation}
+\label{fig:devicesequencediagram}
+\end{figure}
+
+The diagram below is the sequence diagram for the update Cron operation. Cron is a job already running on the probe according to a specific schedule.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{cronsequencediagram.png}
+\caption{Sequence diagram of Cron updating operation}
+\label{fig:cronsequencediagram}
+\end{figure}
+
+The device configuration consists of the device general information (IP address, device ID, location…) and the jobs running on the device in question. First, the user fills the form of device information, after, he submits this information. Using REST web services we deliver the new configuration from frontend application to backend side. Finally, the backend save the new configuration to our database and send it to the device in question in order to consider the new changes.
+
+For Cron configuration, we follow the same process; the user submits the new configuration, after, this configuration will be sent to backend in JSON objects forma. Finally, our backend application implements the changes in the database and the device.
+
+
 \subsubsection{Metrics and tests management module}
+This module describes tests management process. This module is about creating, editing, deleting, and checking available devices.
+The following class diagram (fig.\ref{fig:metricclassdiagram}) presents the involved classes and components that build our module.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{metricclassdiagram.png}
+\caption{Class diagram of the tests and metrics management module}
+\label{fig:metricclassdiagram}
+\end{figure}
+
+Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating tests operations:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{metricsequencediagram.png}
+\caption{Sequence diagram of metrics and tests creation and updating operation}
+\label{fig:metricsequencediagram}
+\end{figure}
+
+The metrics and tests configuration consists of the describing the general test information (test name, test unit, schedules) and the test elements configuration. A test element is a command line or even a script. To achieve better performance, each test element will be tested directly on the Raspberry board going through the frontend application to the backend application to reach our Kafka cluster, the element will be tested and the results will be sent back to Kafka, finally the results data will takes back the same path to reach the user interface. The user configures the element with its results. To finish, the user submits the entire test’s configuration to the web application.
+
+We must note that the updating and creation operations are the same because we are using MongoDB as a database, if the object is already in the database, MongoDB will edit it, and else the object will be created.
+
+
+
 \subsubsection{Network monitoring management module}
+This module describes network monitoring management process. This module is about creating, editing, deleting, and checking available alerts information and constraints.
+
+The following class diagram (fig.\ref{fig:alertclassdiagram}) presents the involved classes and components that build network monitoring module.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{alertclassdiagram.png}
+\caption{Class diagram of the network monitoring management module}
+\label{fig:alertclassdiagram}
+\end{figure}
+
+Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating alerts operations:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{alertsequencediagram.png}
+\caption{Sequence diagram of alerts creation and updating operation}
+\label{fig:alertsequencediagram}
+\end{figure}
+
+The network monitoring configuration consists of creating customized alerts to help network supervisors. The network and broadband administrator fill the form that contains alert information (alert title, alert description, involved test, alert constraint) through the graphic user interface. The alert constraint is a logic expression that defines when the alert will be triggered. The configuration is sent from the frontend to backend with REST web services. The web application saves the alert configuration. The other details about the network monitoring concerning alert triggering and supervision will be explained and clarified in a separate part. 
+
+
+
+
 \subsubsection{Statistics and charts management module}
+This module describes statistics and charts management process. This module is about 	editing, deleting, and checking available charts and views. 
+
+The following class diagram (fig.\ref{fig:viewclassdiagram}) presents the involved classes and components that build the module.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{viewclassdiagram.png}
+\caption{Class diagram of the statistics and charts management module}
+\label{fig:viewclassdiagram}
+\end{figure}
+
+Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation views operation:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{viewsequencediagram.png}
+\caption{Sequence diagram of views creation operation}
+\label{fig:viewsequencediagram}
+\end{figure}
+
+The diagram below is the sequence diagram for dashboard generation operation. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{dashboardsequencediagram.png}
+\caption{Sequence diagram of dashboard operation}
+\label{fig:dashboardsequencediagram}
+\end{figure}
+
+The statistics and charts configuration consists of creating a model carrying a view configuration that we can use it to generate the same view each time. The statistics and charts management module contains two parts, the first one is the views configuration and the second one is the dashboard generation. 
+
+To achieve creating customized views, from the presentation layer, Angular application, the user put the configuration he needs to generate the chart. This configuration goes through REST web service to the backend controller, then to the service layer. The service layer will take the view configuration as parameter to fetch the metrics data, stored in MongoDB, and process the received data in order create view dataset. The chart dataset goes through REST web service again to reach the frontend application arriving to the user interface. At this point, the user has the option to add this view to the dashboard, so the data.
+
+The second part is the dashboard generation, when the user navigate to dashboard, there are three filters, time filter, location filter, and test filter. A request will be sent from the user interface and the Angular component and service to the backend through REST web service carrying the filters inputs. Views are fetched according to the test filter, and then the metrics data is fetched according location and time filter. The metrics data is processed to generate dataset for each view in the dashboard. Finally, the charts datasets goes back to the user interface.
+
+
+
+
 \subsubsection{Authentication and users management module}
+This module describes authentication and users accounts management process. This module is about creating, editing, deleting, and checking available users’ information.
+
+The following class diagram (fig.\ref{fig:userclassdiagram}) presents the involved classes and components that build our module.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{userclassdiagram.png}
+\caption{Class diagram of the authentication and users management module}
+\label{fig:userclassdiagram}
+\end{figure}
+
+Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating users’ information operations:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm,height=10cm]{usersequencediagram.png}
+\caption{Sequence diagram of users’ creation and updating operations}
+\label{fig:usersequencediagram}
+\end{figure}
+
+The user configuration consists of creating a personalized user account that holds a username, a password, and a role or privilege.
+
+The administrator just needs to fill the form with the user information. After finishing, a request is sent to the backend application in order to persist the user information. At this point, the user is able to authenticate.
+
 
 \subsection{Broadband supervision and monitoring theory}
+In the previous parts of the report we talked about the features offered by our solution concerning analytics and components management, although we did not emphasize the real-time network monitoring and metrics data processing. Also we need to clarify how the probes are handling tests and received configurations.
+
+\paragraph{Tests and jobs handling between probes and Kafka}
+~\\
+We are using Kafka as mediator between the server and the probes. For every reboot, devices send their initial configuration to Kafka, in the counterpart, the devices receives their configurations, these configurations holds within it jobs and tests. The embedded application schedules the jobs using Crontab\cite{CRONTAB}. There a listener implemented on the boards in order to wait for configuration changes. The following (fig.\ref{fig:scriptskafka}) illustrates the interactions between a probe and Kafka. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{scriptskafka.png}
+\caption{Device and Kafka interactions}
+\label{fig:scriptskafka}
+\end{figure}
+
+\paragraph{Real-time processing and network monitoring}
+~\\
+As we mentioned earlier, after setting up the tests and alerts configurations, we have real-time data processing, this point is the crucial point of our solution. This part can decide the level of performance of the system. To achieve this task, we chose Kafka Stream.
+
+Kafka Stream is a Kafka client that can handles real-time processing on data coming from a Kafka cluster or broker. Kafka stream subscribes to Business data topic, for each received test result, Kafka Stream brings the alerts configuration concerning the test in question, after, it tests the alerts constraints on the received data, if there is a satisfied constraint, it triggers a specific alert.
+
+Another mission for Kafka Stream is to parse the received data in order to extract the metrics values to store it in MongoDB. However, between data parsing and storage, there is a specific processing for specific tests. In order to explain that, we should know that defining the quality of experience needs to have measurements from different timestamps with specific periods of time. To conclude, a complex calculation is required before storing data to have a better idea about the quality of experience.
+
+Another crucial point in our solution, we need to have a high performance data analytics, MongoDB is an oriented document non-relational database that supports well indexing technique\cite{MONGODB}. MongoDB provides advanced querying operations that we used to perform our analytics with customized filters.
+
+
+
+
 \section{Conclusion}
 Through this chapter, we described each part of the solution, its functionalities both separately and when coordinating with other parts of the system. We also explained subsequently the choice of our logical and physical architecture. Concerning the detailed design, we exhibited the class and sequence diagram. In the next chapter, we present and expose the technologies employed during the process of the creation of our product.
 
@@ -667,13 +837,13 @@ In this section, we discuss the technical choices we made to achieve our final p
 ~\\
 \begin{itemize}
 \item	Spring framework: Spring is a Java application framework. Spring allows users to create enterprise services with POJO (Plain Old Java Objects). Spring uses dependency injection technique; also it provides many application configuration features.
-\item	Spring data MongoDB: Spring data MongoDB is a part of Spring data project which aims to provide a Spring-based APIs (Application Programming Interfaces) for new datastores such as MongoDB. It gives the possibility to execute complex queries on MongoDB, especially with Mongo Template.
+\item	Spring data MongoDB: Spring data MongoDB is a part of Spring data project which aims to provide a Spring-based APIs (Application Programming Interfaces) for new datastores such as MongoDB. It gives the possibility to execute complex queries on MongoDB, especially with Mongo Template\cite{SPRINGDATAMONGODB}.
 \item	Angular 7: Angular is an open source framework developed by Google. Angular is used for frontend application development, it gives the possibility to handle dynamically user interface. Angular is written entirely in Javascript, although it used Typescript as programming language.
 \item	Apache Kafka: Kafka is distributed, fault-tolerant, horizontally scalable, wicked fast streaming platform. It is used for building real-time data pipelines and streaming applications with publish and subscribe technique. We used it as a middleware between widespread probes and the backend application.
 \item	Kafka Stream: Kafka stream is a client library for building applications where the input and output data messages are stored in Kafka cluster or broker. It allows run real-time processing on the data. We used it for real-time processing.
 •	Google protocol buffer: Protocol buffer is a protocol for structured data serializing, Protocol buffer, also known as Protobuf, supports several programming language such as Java, Objective-C, Python and C++.We used it to on the messages coming from the probes. We used this protocol because it is faster than the ordinary data format like JSON.
 \item	OAuth 2.0: OAuth is a protocol for authorization flows for web application. It is simple for developers to use. We used it for security issues in our web application.
-\item	Spring Security: Spring Security is a framework to build applications with powerful and highly customizable authentication and access control.
+\item	Spring Security: Spring Security is a framework to build applications with powerful and highly customizable authentication and access control\cite{SPRINGSECURITY}.
 \item	Linux Crontab: Crontab is a tool for job and task scheduling on Linux operating system, in our case Raspbian. We used it to schedule test running.
 \item	MXparser: MXparser is a library for mathematical expressions parsing and evaluating. We used it with application features that need formula parsing such the case of alerting constraints.
 \item	Bootstrap: Bootstrap is an open source frontend library created by Twitter for developing with HTML, CSS and Javascript in order to build responsive, mobile-first projects.
@@ -682,21 +852,256 @@ In this section, we discuss the technical choices we made to achieve our final p
 
 \section{Achieved work}
 \subsection{Authentication and users management}
+Before starting using the application features, an authentication is required; the figure below (fig.\ref{fig:login}) presents the login screen:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{login.PNG}
+\caption{Authentication screen}
+\label{fig:login}
+\end{figure}
+The figure (fig.\ref{fig:users}) shows the users list with their information; this screen is only accessible from an administrator account:	
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{user.PNG}
+\caption{Users list screen}
+\label{fig:users}
+\end{figure}
+The figure (fig.\ref{fig:updateuser}) presents user information form, these screen is used for creating and updating users:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{updateuser.PNG}
+\caption{User updating screen}
+\label{fig:updateuser}
+\end{figure}
+
+
+
 \subsection{Devices management}
+As we said the devices module consists of connected devices information and jobs management, the following screen (fig.\ref{fig:device})  presents the devices information list:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{device.PNG}
+\caption{Devices list screen}
+\label{fig:device}
+\end{figure}
+As we can see we can navigate to jobs list using this screen.
+
+The following figure (fig.\ref{fig:updatingdevice}) presents device updating screen:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{updatedevice.PNG}
+\caption{Device updating screen}
+\label{fig:updatingdevice}
+\end{figure}
+The second part of the device configuration is the jobs list, the following figure (fig.\ref{fig:cron}) presents the jobs list of a chosen device:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{cron.PNG}
+\caption{Crons list screen}
+\label{fig:cron}
+\end{figure}
+Next, this figure (fig.\ref{fig:updatingcron}) describes the job updating operation, as we can see we change the schedules using this screen:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{updatecron.PNG}
+\caption{Cron updating screen}
+\label{fig:updatingcron}
+\end{figure}
+After submitting this form, the new configuration will be sent to the device in question.
+
+
+
+
+
 \subsection{Metrics and tests management}
-\subsection{Statistics and dashboard management}
+Metrics and test management module is responsible for creating tests for the probes; the following screen (fig.\ref{fig:metric}) shows the tests list:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{metric.PNG}
+\caption{Tests list screen}
+\label{fig:metric}
+\end{figure}
+To update or create a test, we have this wizard (fig.\ref{fig:wizard}):
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{wizard.png}
+\caption{Test configuring wizard screen}
+\label{fig:wizard}
+\end{figure}
+With this wizard we can create test elements that contain formulas; also we can add new resources to the devices and create test element schedules, and of course we can test each element directly on a connected device.
+
+
+
+
 \subsection{Alerts management}
+The network monitoring module consists of creating alerts with customized constraints. The following figure (fig.\ref{fig:alert}) presents the alerts list.
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{alert.PNG}
+\caption{Alerts list screen}
+\label{fig:alert}
+\end{figure}
+The following form (fig.\ref{fig:createalert}) illustrates alerts creation. The constraint field must have a logic expression as input. To facilitate the task we are using drag and drop module with personalized elements:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{createalert.PNG}
+\caption{Alert configuring screen}
+\label{fig:createalert}
+\end{figure}
+
+
+
+
+\subsection{Statistics and dashboard management}
+The statistics and dashboard management module consists of testing and creating customized charts to be visualized by network supervisors on the dashboard. The following figure (fig.\ref{fig:statistic}) presents the chart generation process:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{statistics.PNG}
+\caption{Chart customizing screen}
+\label{fig:statistic}
+\end{figure}
+At this point the user has the right to ass this view to the dashboard.
+
+Last but not least we have our dashboard. The figure (fig.\ref{fig:dashboard}) presents an overview of the dashboard:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{dashboard.PNG}
+\caption{Online dashboard screen}
+\label{fig:dashboard}
+\end{figure}
+The following filters are already implemented in the dashboard. The following screen (fig.\ref{fig:timefilter}) presents the time period filter:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{timefilter.PNG}
+\caption{Time period filter}
+\label{fig:timefilter}
+\end{figure}
+The following figure (fig.\ref{fig:locationfilter}) presents the location filter. This filter gives the hand to users to get the charts according zone area:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{locationfilter.PNG}
+\caption{Devices filter}
+\label{fig:locationfilter}
+\end{figure}
+To give the user more information about the quality of experience, we implemented a comparison filters that generates charts to compare between periods and zones (fig.\ref{fig:comparingfilter}):
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{comparingfilter.PNG}
+\caption{Comparison filters}
+\label{fig:comparingfilter}
+\end{figure}
+A part of the dashboard is reserved for alerts. The user can access to an alert details as follows in (fig.\ref{fig:alertdetail}):
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{alertdetail.PNG}
+\caption{Triggered alert detail screen}
+\label{fig:alertdetail}
+\end{figure}
+The charts that we are using in dashboard have several advanced options like data zooming, data visualizing and bar chart support\cite{ECHARTS}. The following figure fig.\ref{fig:chart}) is a sample:
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{charts.PNG}
+\caption{Implemented chart}
+\label{fig:chart}
+\end{figure}
+
+
+
 \section{Conclusion}
 uring this chapter, we presented the technologies that were chosen to implement our project and we argued that choice. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
 
 \chapter{General Conclusion and Future Work}
+We were focused on solving the broadband supervision and monitoring issue by designing and developing a flexible and easy-to-use platform. As a matter of fact, we implemented a web application that helps network supervisors to assess the quality of service of their networks. This information (quality of service) is provided by data analytics, this data is coming from widespread probes. We designed the platform in order to give users the flexibility they need to manage their tests and devices online.
+
+For the graphic user interface, we developed many advanced graphic options to give users better experience with our application.
+
+During the project, we were aware of data security, so we implemented many security techniques. 
+
+As every project can be enhanced and expanded, various perspectives are imminent for our project. We can mention the enhancement of the real-time processing component using machine learning algorithms to predict the quality of experience, there is some technologies that can be integrated with our platform in order to achieve these enhancements. With this empowering we can predict unusual quality of experience.
 
 
 \begin{thebibliography}{9}
+\bibitem{SAMKNOWS} 
+SamKnows. \\
+\textit{Samknows tests}. \\
+\href{https://samknows.com/technology/tests}{https://samknows.com/technology/tests}.
 
+
+
+\bibitem{SPRINGDATAMONGODB}  
+Mark Pollack,
+Thomas Risberg,
+Oliver Gierke,
+Costin Leau,
+Jon Brisbin,
+Thomas Darimont,
+Christoph Strobl,
+Mark Paluch,
+Jay Bryant.
+\\
+\textit{Spring Data MongoDB - Reference Documentation}\\
+\href{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/}{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/}.
+
+
+\bibitem{KAFKASTREAM} 
+Apache Sotware Foundation. \\
+\textit{Kafka Streams
+}. \\
+\href{https://docs.confluent.io/current/streams/index.html}
+{https://docs.confluent.io/current/streams/index.html}.
+
+
+
+\bibitem{RDKAFKA} 
+edenhill Github. \\
+\textit{librdkafka the Apache Kafka C/C++ client library
+}. \\
+\href{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html}
+{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html}.
+
+
+\bibitem{SPRINGSECURITY} 
+Eugen Paraschiv. \\
+\textit{Using JWT with Spring Security OAuth
+}. \\
+\href{https://www.baeldung.com/spring-security-oauth-jwt}
+{https://www.baeldung.com/spring-security-oauth-jwt}.
+
+
+
+\bibitem{MONGODB} 
+MongoDB. \\
+\textit{Indexes
+}. \\
+\href{https://docs.mongodb.com/manual/indexes/}
+{https://docs.mongodb.com/manual/indexes/}.
+
+
+\bibitem{ECHARTS} 
+ECHARTS Community. \\
+\textit{ECHARTS
+}. \\
+\href{https://echarts.apache.org/en/index.html}
+{https://echarts.apache.org/en/index.html}.
+
+
+\bibitem{ANGULAR} 
+ Google. \\
+\textit{Angular 7
+}. \\
+\href{https://v7.angular.io/docs}
+{https://v7.angular.io/docs}.
+
+
+\bibitem{CRONTAB} 
+ Python community. \\
+\textit{python-crontab 2.3.6
+}. \\
+\href{https://pypi.org/project/python-crontab/}
+{https://pypi.org/project/python-crontab/}.
 
 \end{thebibliography}
 
-\chapter*{Appendix}
+%\chapter*{Appendix}
 
 \end{document}
