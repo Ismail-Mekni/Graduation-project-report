@@ -28,8 +28,8 @@
 \contentsline {subsection}{\numberline {2.5.1}Manage devices}{14}{subsection.2.5.1}% 
 \contentsline {subsection}{\numberline {2.5.2}Manage tests}{16}{subsection.2.5.2}% 
 \contentsline {subsection}{\numberline {2.5.3}Manage network monitoring}{18}{subsection.2.5.3}% 
-\contentsline {subsection}{\numberline {2.5.4}Manage statistics and charts configuration}{20}{subsection.2.5.4}% 
-\contentsline {subsection}{\numberline {2.5.5}Manage users}{22}{subsection.2.5.5}% 
+\contentsline {subsection}{\numberline {2.5.4}Manage statistics and charts configurations}{20}{subsection.2.5.4}% 
+\contentsline {subsection}{\numberline {2.5.5}Manage user}{22}{subsection.2.5.5}% 
 \contentsline {section}{\numberline {2.6}Conclusion}{23}{section.2.6}% 
 \contentsline {chapter}{\numberline {3}Design of the Physical and Logical Architectures}{24}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Introduction}{24}{section.3.1}% 
@@ -39,11 +39,11 @@
 \contentsline {subsection}{\numberline {3.3.2}Modular decomposition}{28}{subsection.3.3.2}% 
 \contentsline {subsubsection}{\numberline {3.3.2.1}Class diagram of entities}{28}{subsubsection.3.3.2.1}% 
 \contentsline {subsubsection}{\numberline {3.3.2.2}Package diagram}{30}{subsubsection.3.3.2.2}% 
-\contentsline {subsubsection}{\numberline {3.3.2.3}Devices management module}{30}{subsubsection.3.3.2.3}% 
-\contentsline {subsubsection}{\numberline {3.3.2.4}Metrics and tests management module}{33}{subsubsection.3.3.2.4}% 
+\contentsline {subsubsection}{\numberline {3.3.2.3}Device management module}{30}{subsubsection.3.3.2.3}% 
+\contentsline {subsubsection}{\numberline {3.3.2.4}Metric and test management module}{33}{subsubsection.3.3.2.4}% 
 \contentsline {subsubsection}{\numberline {3.3.2.5}Network monitoring management module}{35}{subsubsection.3.3.2.5}% 
-\contentsline {subsubsection}{\numberline {3.3.2.6}Statistics and charts management module}{37}{subsubsection.3.3.2.6}% 
-\contentsline {subsubsection}{\numberline {3.3.2.7}Authentication and users management module}{40}{subsubsection.3.3.2.7}% 
+\contentsline {subsubsection}{\numberline {3.3.2.6}Statistic and chart management module}{37}{subsubsection.3.3.2.6}% 
+\contentsline {subsubsection}{\numberline {3.3.2.7}Authentication and user management module}{40}{subsubsection.3.3.2.7}% 
 \contentsline {subsection}{\numberline {3.3.3}Broadband supervision and monitoring theory}{42}{subsection.3.3.3}% 
 \contentsline {paragraph}{Tests and jobs handling between probes and Kafka}{42}{section*.11}% 
 \contentsline {paragraph}{Real-time processing and network monitoring}{43}{section*.12}% 
@@ -57,10 +57,10 @@
 \contentsline {paragraph}{Programming languages}{47}{section*.13}% 
 \contentsline {paragraph}{Frameworks and technologies}{47}{section*.14}% 
 \contentsline {section}{\numberline {4.3}Achieved work}{48}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Authentication and users management}{48}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Devices management}{50}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Metrics and tests management}{52}{subsection.4.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Alerts management}{54}{subsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.3.1}Authentication and user management}{48}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Device management}{50}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Metric and test management}{52}{subsection.4.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Network monitoring management}{54}{subsection.4.3.4}% 
 \contentsline {subsection}{\numberline {4.3.5}Statistics and dashboard management}{55}{subsection.4.3.5}% 
 \contentsline {section}{\numberline {4.4}Conclusion}{58}{section.4.4}% 
 \contentsline {chapter}{\numberline {5}General Conclusion and Future Work}{59}{chapter.5}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.9)  14 JUN 2019 04:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.9)  14 JUN 2019 15:56
 entering extended mode
 **./pfe.tex
 (pfe.tex
@@ -562,7 +562,7 @@ Chapter 1.
 [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 187.
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 192.
 
 
 ("C:\Users\i.mekni\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsbch.fd
@@ -570,77 +570,77 @@ LaTeX Font Info:    Try loading font information for OMS+bch on input line 187.
 File: omsbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
  [5]
-<samknows.png, id=459, 1109.14375pt x 795.97375pt>
+<samknows.png, id=460, 1109.14375pt x 795.97375pt>
 File: samknows.png Graphic file (type png)
 <use samknows.png>
-Package pdftex.def Info: samknows.png  used on input line 219.
+Package pdftex.def Info: samknows.png  used on input line 224.
 (pdftex.def)             Requested size: 426.79134pt x 306.28688pt.
  [6]
-<smaq.png, id=466, 1370.11874pt x 662.475pt>
+<smaq.png, id=467, 1370.11874pt x 662.475pt>
 File: smaq.png Graphic file (type png)
 <use smaq.png>
-Package pdftex.def Info: smaq.png  used on input line 229.
+Package pdftex.def Info: smaq.png  used on input line 234.
 (pdftex.def)             Requested size: 426.79134pt x 206.35576pt.
  [7 <./samknows.png> <./smaq.png>] [8] [9]
 Chapter 2.
 [10
 
 ] [11] [12]
-<general-use-case-diagram.png, id=501, 1237.62375pt x 851.18pt>
+<general-use-case-diagram.png, id=502, 1237.62375pt x 851.18pt>
 File: general-use-case-diagram.png Graphic file (type png)
 <use general-use-case-diagram.png>
-Package pdftex.def Info: general-use-case-diagram.png  used on input line 362.
+Package pdftex.def Info: general-use-case-diagram.png  used on input line 367.
 (pdftex.def)             Requested size: 426.79181pt x 455.2534pt.
  [13 <./general-use-case-diagram.png>]
-<manage-device-sequece-diagram.png, id=508, 663.47874pt x 382.42876pt>
+<manage-device-sequece-diagram.png, id=509, 663.47874pt x 382.42876pt>
 File: manage-device-sequece-diagram.png Graphic file (type png)
 <use manage-device-sequece-diagram.png>
 Package pdftex.def Info: manage-device-sequece-diagram.png  used on input line 
-373.
+378.
 (pdftex.def)             Requested size: 426.79144pt x 369.90506pt.
  [14 <./manage-device-sequece-diagram.png>]
-<tests-management-sequence-diagram.png, id=515, 694.595pt x 382.42876pt>
+<tests-management-sequence-diagram.png, id=516, 694.595pt x 382.42876pt>
 File: tests-management-sequence-diagram.png Graphic file (type png)
 <use tests-management-sequence-diagram.png>
 Package pdftex.def Info: tests-management-sequence-diagram.png  used on input l
-ine 404.
+ine 409.
 (pdftex.def)             Requested size: 426.80774pt x 369.90506pt.
  [15] [16 <./tests-management-sequence-diagram.png>]
-<network-monitoring-management-sequence-diagram.png, id=527, 527.9725pt x 382.4
+<network-monitoring-management-sequence-diagram.png, id=528, 527.9725pt x 382.4
 2876pt>
 File: network-monitoring-management-sequence-diagram.png Graphic file (type png
 )
 <use network-monitoring-management-sequence-diagram.png>
 Package pdftex.def Info: network-monitoring-management-sequence-diagram.png  us
-ed on input line 436.
+ed on input line 441.
 (pdftex.def)             Requested size: 426.78531pt x 398.3584pt.
  [17]
-Overfull \hbox (2.58267pt too wide) in paragraph at lines 443--459
+Overfull \hbox (2.58267pt too wide) in paragraph at lines 448--464
  [][] 
  []
 
 [18 <./network-monitoring-management-sequence-diagram.png>]
-<charts-management-sequence-diagram.png, id=538, 527.9725pt x 482.80376pt>
+<charts-management-sequence-diagram.png, id=539, 527.9725pt x 482.80376pt>
 File: charts-management-sequence-diagram.png Graphic file (type png)
 <use charts-management-sequence-diagram.png>
 Package pdftex.def Info: charts-management-sequence-diagram.png  used on input 
-line 469.
+line 474.
 (pdftex.def)             Requested size: 426.78531pt x 398.35486pt.
  [19] [20 <./charts-management-sequence-diagram.png>]
-<users-management-sequence-diagram.png, id=549, 527.9725pt x 462.72874pt>
+<users-management-sequence-diagram.png, id=550, 527.9725pt x 462.72874pt>
 File: users-management-sequence-diagram.png Graphic file (type png)
 <use users-management-sequence-diagram.png>
 Package pdftex.def Info: users-management-sequence-diagram.png  used on input l
-ine 502.
+ine 507.
 (pdftex.def)             Requested size: 426.78531pt x 398.34142pt.
  [21] [22 <./users-management-sequence-diagram.png>] [23]
 Chapter 3.
-<physicalarchitecture.png, id=566, 343.2825pt x 934.24031pt>
+<physicalarchitecture.png, id=567, 343.2825pt x 934.24031pt>
 File: physicalarchitecture.png Graphic file (type png)
 <use physicalarchitecture.png>
-Package pdftex.def Info: physicalarchitecture.png  used on input line 550.
+Package pdftex.def Info: physicalarchitecture.png  used on input line 555.
 (pdftex.def)             Requested size: 261.38454pt x 711.3189pt.
 [24
 
@@ -649,261 +649,260 @@ Overfull \vbox (35.5498pt too high) has occurred while \output is active []
 
 
 [25 <./physicalarchitecture.png>]
-<logicalarchitecture.png, id=577, 355.3275pt x 1246.6575pt>
+<logicalarchitecture.png, id=578, 355.3275pt x 1246.6575pt>
 File: logicalarchitecture.png Graphic file (type png)
 <use logicalarchitecture.png>
-Package pdftex.def Info: logicalarchitecture.png  used on input line 571.
+Package pdftex.def Info: logicalarchitecture.png  used on input line 576.
 (pdftex.def)             Requested size: 202.7448pt x 711.3189pt.
  [26]
 Overfull \vbox (35.5498pt too high) has occurred while \output is active []
 
 
 [27 <./logicalarchitecture.png>]
-<generalclassdiagram.png, id=591, 556.32843pt x 932.73468pt>
+<generalclassdiagram.png, id=592, 556.32843pt x 932.73468pt>
 File: generalclassdiagram.png Graphic file (type png)
 <use generalclassdiagram.png>
-Package pdftex.def Info: generalclassdiagram.png  used on input line 596.
+Package pdftex.def Info: generalclassdiagram.png  used on input line 601.
 (pdftex.def)             Requested size: 424.28258pt x 711.3189pt.
  [28]
 Overfull \vbox (35.5498pt too high) has occurred while \output is active []
 
 
 [29 <./generalclassdiagram.png>]
-<packagediagram.png, id=605, 1089.06876pt x 748.7975pt>
+<packagediagram.png, id=606, 1089.06876pt x 748.7975pt>
 File: packagediagram.png Graphic file (type png)
 <use packagediagram.png>
-Package pdftex.def Info: packagediagram.png  used on input line 605.
+Package pdftex.def Info: packagediagram.png  used on input line 610.
 (pdftex.def)             Requested size: 426.79134pt x 293.43521pt.
-<deviceclassdiagram.png, id=607, 819.06pt x 732.7375pt>
+<deviceclassdiagram.png, id=608, 819.06pt x 732.7375pt>
 File: deviceclassdiagram.png Graphic file (type png)
 <use deviceclassdiagram.png>
-Package pdftex.def Info: deviceclassdiagram.png  used on input line 616.
+Package pdftex.def Info: deviceclassdiagram.png  used on input line 621.
 (pdftex.def)             Requested size: 426.79134pt x 381.81952pt.
  [30 <./packagediagram.png>]
-<devicesequencediagram.png, id=612, 1038.88126pt x 286.82156pt>
+<devicesequencediagram.png, id=613, 1038.88126pt x 286.82156pt>
 File: devicesequencediagram.png Graphic file (type png)
 <use devicesequencediagram.png>
-Package pdftex.def Info: devicesequencediagram.png  used on input line 625.
+Package pdftex.def Info: devicesequencediagram.png  used on input line 630.
 (pdftex.def)             Requested size: 483.69302pt x 284.5319pt.
 
-Overfull \hbox (46.94412pt too wide) in paragraph at lines 625--626
+Overfull \hbox (46.94412pt too wide) in paragraph at lines 630--631
  [][] 
  []
 
 [31 <./deviceclassdiagram.png>]
-<cronsequencediagram.png, id=617, 1032.10594pt x 287.57437pt>
+<cronsequencediagram.png, id=618, 1032.10594pt x 287.57437pt>
 File: cronsequencediagram.png Graphic file (type png)
 <use cronsequencediagram.png>
-Package pdftex.def Info: cronsequencediagram.png  used on input line 634.
+Package pdftex.def Info: cronsequencediagram.png  used on input line 639.
 (pdftex.def)             Requested size: 483.68823pt x 284.53716pt.
 
-Overfull \hbox (46.93933pt too wide) in paragraph at lines 634--635
+Overfull \hbox (46.93933pt too wide) in paragraph at lines 639--640
  [][] 
  []
 
 [32 <./devicesequencediagram.png> <./cronsequencediagram.png>]
-<metricclassdiagram.png, id=625, 687.56876pt x 749.80125pt>
+<metricclassdiagram.png, id=626, 687.56876pt x 749.80125pt>
 File: metricclassdiagram.png Graphic file (type png)
 <use metricclassdiagram.png>
-Package pdftex.def Info: metricclassdiagram.png  used on input line 650.
+Package pdftex.def Info: metricclassdiagram.png  used on input line 655.
 (pdftex.def)             Requested size: 426.79134pt x 465.42114pt.
  [33]
-<metricsequencediagram.png, id=630, 1137.4997pt x 377.91188pt>
+<metricsequencediagram.png, id=631, 1137.4997pt x 377.91188pt>
 File: metricsequencediagram.png Graphic file (type png)
 <use metricsequencediagram.png>
-Package pdftex.def Info: metricsequencediagram.png  used on input line 659.
+Package pdftex.def Info: metricsequencediagram.png  used on input line 664.
 (pdftex.def)             Requested size: 483.70001pt x 284.52884pt.
 
-Overfull \hbox (46.95111pt too wide) in paragraph at lines 659--660
+Overfull \hbox (46.95111pt too wide) in paragraph at lines 664--665
  [][] 
  []
 
 [34 <./metricclassdiagram.png>]
-<alertclassdiagram.png, id=637, 522.95375pt x 755.82375pt>
+<alertclassdiagram.png, id=638, 522.95375pt x 755.82375pt>
 File: alertclassdiagram.png Graphic file (type png)
 <use alertclassdiagram.png>
-Package pdftex.def Info: alertclassdiagram.png  used on input line 677.
+Package pdftex.def Info: alertclassdiagram.png  used on input line 682.
 (pdftex.def)             Requested size: 426.79134pt x 616.85013pt.
- [35 <./metricsequencediagram.png>]
-<alertsequencediagram.png, id=643, 1184.425pt x 382.42876pt>
+ [35 <./metricsequencediagram.png>] [36 <./alertclassdiagram.png>]
+<alertsequencediagram.png, id=648, 1184.425pt x 382.42876pt>
 File: alertsequencediagram.png Graphic file (type png)
 <use alertsequencediagram.png>
-Package pdftex.def Info: alertsequencediagram.png  used on input line 686.
+Package pdftex.def Info: alertsequencediagram.png  used on input line 691.
 (pdftex.def)             Requested size: 483.70168pt x 284.53922pt.
 
-Overfull \hbox (46.95277pt too wide) in paragraph at lines 686--687
+Overfull \hbox (46.95277pt too wide) in paragraph at lines 691--692
  [][] 
  []
 
-[36 <./alertclassdiagram.png>]
-<viewclassdiagram.png, id=649, 586.19pt x 749.80125pt>
+<viewclassdiagram.png, id=650, 586.19pt x 749.80125pt>
 File: viewclassdiagram.png Graphic file (type png)
 <use viewclassdiagram.png>
-Package pdftex.def Info: viewclassdiagram.png  used on input line 703.
+Package pdftex.def Info: viewclassdiagram.png  used on input line 708.
 (pdftex.def)             Requested size: 426.79134pt x 545.9088pt.
- [37 <./alertsequencediagram.png>]
-<viewsequencediagram.png, id=655, 1453.43pt x 382.42876pt>
+[37 <./alertsequencediagram.png>]
+<viewsequencediagram.png, id=656, 1453.43pt x 382.42876pt>
 File: viewsequencediagram.png Graphic file (type png)
 <use viewsequencediagram.png>
-Package pdftex.def Info: viewsequencediagram.png  used on input line 712.
+Package pdftex.def Info: viewsequencediagram.png  used on input line 717.
 (pdftex.def)             Requested size: 483.69186pt x 284.53922pt.
 
-Overfull \hbox (46.94296pt too wide) in paragraph at lines 712--713
+Overfull \hbox (46.94296pt too wide) in paragraph at lines 717--718
  [][] 
  []
 
 [38 <./viewclassdiagram.png>]
-<dashboardsequencediagram.png, id=660, 1434.35875pt x 382.42876pt>
+<dashboardsequencediagram.png, id=661, 1434.35875pt x 382.42876pt>
 File: dashboardsequencediagram.png Graphic file (type png)
 <use dashboardsequencediagram.png>
-Package pdftex.def Info: dashboardsequencediagram.png  used on input line 721.
+Package pdftex.def Info: dashboardsequencediagram.png  used on input line 726.
 (pdftex.def)             Requested size: 483.69218pt x 284.53922pt.
 
-Overfull \hbox (46.94328pt too wide) in paragraph at lines 721--722
+Overfull \hbox (46.94328pt too wide) in paragraph at lines 726--727
  [][] 
  []
 
 [39 <./viewsequencediagram.png> <./dashboardsequencediagram.png>]
-<userclassdiagram.png, id=668, 552.0625pt x 739.76375pt>
+<userclassdiagram.png, id=669, 552.0625pt x 739.76375pt>
 File: userclassdiagram.png Graphic file (type png)
 <use userclassdiagram.png>
-Package pdftex.def Info: userclassdiagram.png  used on input line 742.
+Package pdftex.def Info: userclassdiagram.png  used on input line 747.
 (pdftex.def)             Requested size: 426.79134pt x 571.92256pt.
  [40]
-<usersequencediagram.png, id=674, 1175.39125pt x 382.42876pt>
+<usersequencediagram.png, id=675, 1175.39125pt x 382.42876pt>
 File: usersequencediagram.png Graphic file (type png)
 <use usersequencediagram.png>
-Package pdftex.def Info: usersequencediagram.png  used on input line 751.
+Package pdftex.def Info: usersequencediagram.png  used on input line 756.
 (pdftex.def)             Requested size: 483.6891pt x 284.53922pt.
 
-Overfull \hbox (46.9402pt too wide) in paragraph at lines 751--752
+Overfull \hbox (46.9402pt too wide) in paragraph at lines 756--757
  [][] 
  []
 
 [41 <./userclassdiagram.png>]
-<scriptskafka.png, id=681, 505.89pt x 472.76625pt>
+<scriptskafka.png, id=682, 505.89pt x 472.76625pt>
 File: scriptskafka.png Graphic file (type png)
 <use scriptskafka.png>
-Package pdftex.def Info: scriptskafka.png  used on input line 770.
+Package pdftex.def Info: scriptskafka.png  used on input line 775.
 (pdftex.def)             Requested size: 426.79134pt x 398.85225pt.
  [42 <./usersequencediagram.png>] [43 <./scriptskafka.png>] [44]
 Chapter 4.
 [45
 
 ] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
+Underfull \hbox (badness 10000) in paragraph at lines 832--833
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 837--838
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
 
-Overfull \hbox (1.31775pt too wide) in paragraph at lines 842--843
+Overfull \hbox (1.31775pt too wide) in paragraph at lines 847--848
 []\T1/bch/m/n/12 Apache Kafka: Kafka is dis-tributed, fault-tolerant, hor-i-zon
 -tally scal-able, wicked
  []
 
 [47]
-<login.PNG, id=720, 1020.81375pt x 492.33937pt>
+<login.PNG, id=721, 1020.81375pt x 492.33937pt>
 File: login.PNG Graphic file (type png)
 <use login.PNG>
-Package pdftex.def Info: login.PNG  used on input line 858.
+Package pdftex.def Info: login.PNG  used on input line 863.
 (pdftex.def)             Requested size: 426.79134pt x 205.84206pt.
  [48]
-<user.PNG, id=727, 1027.58907pt x 432.86719pt>
+<user.PNG, id=728, 1027.58907pt x 432.86719pt>
 File: user.PNG Graphic file (type png)
 <use user.PNG>
-Package pdftex.def Info: user.PNG  used on input line 865.
+Package pdftex.def Info: user.PNG  used on input line 870.
 (pdftex.def)             Requested size: 426.79134pt x 179.78183pt.
-<updateuser.PNG, id=729, 1023.07219pt x 490.83376pt>
+<updateuser.PNG, id=730, 1023.07219pt x 490.83376pt>
 File: updateuser.PNG Graphic file (type png)
 <use updateuser.PNG>
-Package pdftex.def Info: updateuser.PNG  used on input line 872.
+Package pdftex.def Info: updateuser.PNG  used on input line 877.
 (pdftex.def)             Requested size: 426.79134pt x 204.75572pt.
  [49 <./login.PNG> <./user.PNG>]
-<device.PNG, id=737, 1027.58907pt x 413.29407pt>
+<device.PNG, id=738, 1027.58907pt x 413.29407pt>
 File: device.PNG Graphic file (type png)
 <use device.PNG>
-Package pdftex.def Info: device.PNG  used on input line 883.
+Package pdftex.def Info: device.PNG  used on input line 888.
 (pdftex.def)             Requested size: 426.79134pt x 171.65257pt.
-<updatedevice.PNG, id=739, 848.4197pt x 305.64188pt>
+<updatedevice.PNG, id=740, 848.4197pt x 305.64188pt>
 File: updatedevice.PNG Graphic file (type png)
 <use updatedevice.PNG>
-Package pdftex.def Info: updatedevice.PNG  used on input line 892.
+Package pdftex.def Info: updatedevice.PNG  used on input line 897.
 (pdftex.def)             Requested size: 426.79134pt x 153.74863pt.
  [50 <./updateuser.PNG> <./device.PNG>]
-<cron.PNG, id=747, 1027.58907pt x 441.90094pt>
+<cron.PNG, id=748, 1027.58907pt x 441.90094pt>
 File: cron.PNG Graphic file (type png)
 <use cron.PNG>
-Package pdftex.def Info: cron.PNG  used on input line 899.
+Package pdftex.def Info: cron.PNG  used on input line 904.
 (pdftex.def)             Requested size: 426.79134pt x 183.53381pt.
-<updatecron.PNG, id=749, 1027.58907pt x 423.83344pt>
+<updatecron.PNG, id=750, 1027.58907pt x 423.83344pt>
 File: updatecron.PNG Graphic file (type png)
 <use updatecron.PNG>
-Package pdftex.def Info: updatecron.PNG  used on input line 906.
+Package pdftex.def Info: updatecron.PNG  used on input line 911.
 (pdftex.def)             Requested size: 426.79134pt x 176.02986pt.
  [51 <./updatedevice.PNG> <./cron.PNG>]
-<metric.PNG, id=757, 1027.58907pt x 492.33937pt>
+<metric.PNG, id=758, 1027.58907pt x 492.33937pt>
 File: metric.PNG Graphic file (type png)
 <use metric.PNG>
-Package pdftex.def Info: metric.PNG  used on input line 920.
+Package pdftex.def Info: metric.PNG  used on input line 925.
 (pdftex.def)             Requested size: 426.79134pt x 204.4823pt.
-<wizard.png, id=759, 548.0475pt x 834.11626pt>
+<wizard.png, id=760, 548.0475pt x 834.11626pt>
 File: wizard.png Graphic file (type png)
 <use wizard.png>
-Package pdftex.def Info: wizard.png  used on input line 927.
+Package pdftex.def Info: wizard.png  used on input line 932.
 (pdftex.def)             Requested size: 426.79134pt x 649.57713pt.
  [52 <./updatecron.PNG> <./metric.PNG>] [53 <./wizard.png>]
-<alert.PNG, id=773, 1027.58907pt x 491.58656pt>
+<alert.PNG, id=774, 1027.58907pt x 491.58656pt>
 File: alert.PNG Graphic file (type png)
 <use alert.PNG>
-Package pdftex.def Info: alert.PNG  used on input line 940.
+Package pdftex.def Info: alert.PNG  used on input line 945.
 (pdftex.def)             Requested size: 426.79134pt x 204.16963pt.
-<createalert.PNG, id=775, 1027.58907pt x 490.08093pt>
+<createalert.PNG, id=776, 1027.58907pt x 490.08093pt>
 File: createalert.PNG Graphic file (type png)
 <use createalert.PNG>
-Package pdftex.def Info: createalert.PNG  used on input line 947.
+Package pdftex.def Info: createalert.PNG  used on input line 952.
 (pdftex.def)             Requested size: 426.79134pt x 203.54431pt.
-<statistics.PNG, id=777, 1014.03844pt x 492.33937pt>
+<statistics.PNG, id=778, 1014.03844pt x 492.33937pt>
 File: statistics.PNG Graphic file (type png)
 <use statistics.PNG>
-Package pdftex.def Info: statistics.PNG  used on input line 959.
+Package pdftex.def Info: statistics.PNG  used on input line 964.
 (pdftex.def)             Requested size: 426.79134pt x 207.21684pt.
  [54 <./alert.PNG> <./createalert.PNG>]
-<dashboard.PNG, id=785, 1019.30812pt x 494.59781pt>
+<dashboard.PNG, id=786, 1019.30812pt x 494.59781pt>
 File: dashboard.PNG Graphic file (type png)
 <use dashboard.PNG>
-Package pdftex.def Info: dashboard.PNG  used on input line 968.
+Package pdftex.def Info: dashboard.PNG  used on input line 973.
 (pdftex.def)             Requested size: 426.79134pt x 207.0957pt.
-<timefilter.PNG, id=787, 830.35219pt x 303.38344pt>
+<timefilter.PNG, id=788, 830.35219pt x 303.38344pt>
 File: timefilter.PNG Graphic file (type png)
 <use timefilter.PNG>
-Package pdftex.def Info: timefilter.PNG  used on input line 975.
+Package pdftex.def Info: timefilter.PNG  used on input line 980.
 (pdftex.def)             Requested size: 426.79134pt x 155.93636pt.
  [55 <./statistics.PNG> <./dashboard.PNG>]
-<locationfilter.PNG, id=795, 1016.29688pt x 484.81125pt>
+<locationfilter.PNG, id=796, 1016.29688pt x 484.81125pt>
 File: locationfilter.PNG Graphic file (type png)
 <use locationfilter.PNG>
-Package pdftex.def Info: locationfilter.PNG  used on input line 982.
+Package pdftex.def Info: locationfilter.PNG  used on input line 987.
 (pdftex.def)             Requested size: 426.79134pt x 203.59714pt.
-<comparingfilter.PNG, id=797, 823.57687pt x 109.91063pt>
+<comparingfilter.PNG, id=798, 823.57687pt x 109.91063pt>
 File: comparingfilter.PNG Graphic file (type png)
 <use comparingfilter.PNG>
-Package pdftex.def Info: comparingfilter.PNG  used on input line 989.
+Package pdftex.def Info: comparingfilter.PNG  used on input line 994.
 (pdftex.def)             Requested size: 426.79134pt x 56.95761pt.
-<alertdetail.PNG, id=799, 441.14813pt x 325.96782pt>
+<alertdetail.PNG, id=800, 441.14813pt x 325.96782pt>
 File: alertdetail.PNG Graphic file (type png)
 <use alertdetail.PNG>
-Package pdftex.def Info: alertdetail.PNG  used on input line 996.
+Package pdftex.def Info: alertdetail.PNG  used on input line 1001.
 (pdftex.def)             Requested size: 426.79134pt x 315.37268pt.
  [56 <./timefilter.PNG> <./locationfilter.PNG> <./comparingfilter.PNG>]
-<charts.PNG, id=809, 414.04688pt x 337.26pt>
+<charts.PNG, id=810, 414.04688pt x 337.26pt>
 File: charts.PNG Graphic file (type png)
 <use charts.PNG>
-Package pdftex.def Info: charts.PNG  used on input line 1003.
+Package pdftex.def Info: charts.PNG  used on input line 1008.
 (pdftex.def)             Requested size: 426.79134pt x 347.64928pt.
  [57 <./alertdetail.PNG>] [58 <./charts.PNG>]
 Chapter 5.
@@ -912,38 +911,38 @@ Chapter 5.
 ] [60
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1107.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1112.
  [61]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1112.
  (pfe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1107.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1107.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1112.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1112.
 
 Package rerunfilecheck Info: File `pfe.out' has not changed.
-(rerunfilecheck)             Checksum: FC80FB654D0F4437BFE4E6BAD2E035F1;11666.
+(rerunfilecheck)             Checksum: 796641A8FCE9D7946108BF4FAA4F73A1;11679.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1107.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1112.
  ) 
 Here is how much of TeX's memory you used:
  11251 strings out of 492895
  165674 string characters out of 3122802
- 283616 words of memory out of 3000000
+ 283627 words of memory out of 3000000
  14797 multiletter control sequences out of 15000+200000
  45234 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,14n,47p,961b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,14n,47p,968b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/i.mekni/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
 nc}<C:/Users/i.mekni/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bitstrea/cha
 rter/bchb8a.pfb><C:/Users/i.mekni/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /bitstrea/charter/bchr8a.pfb><C:/Users/i.mekni/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/i.mekni/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on pfe.pdf (70 pages, 2299309 bytes).
+Output written on pfe.pdf (70 pages, 2299648 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
+ 904 PDF objects out of 1000 (max. 8388607)
  198 named destinations out of 1000 (max. 500000)
  669 words of extra memory for PDF output out of 10000 (max. 10000000)
 

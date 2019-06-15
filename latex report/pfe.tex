@@ -89,7 +89,7 @@
 \normalsize{Option: Distributed Systems}\\
 ~\\[0.6cm]
 \rule[0.5ex]{1\columnwidth}{1pt}\\[0.5cm]
-{ \huge \bfseries Designing and Developing a platform of remote and communicating equipements }\\[0.5cm]
+{ \huge \bfseries Designing and Developing a platform for remote and communicating equipements }\\[0.5cm]
 \rule[0.5ex]{1\columnwidth}{1pt}\\[2cm]
 % Author and supervisor
 \center By: Ismail Mekni\\~\\
@@ -119,9 +119,13 @@ To my family and all my beloved.
 
 \chapter*{Acknowledgements}
 
-IIn conducting this report, I have received meaningful assistance from many quarters which I like to put on record here with deep gratitude and great pleasure.
-First and foremost, I express my sincere gratitude to my supervisors, Mr. Sabri Mtibaa, Ms. Marwa Drissi, and Mr. Aref Meddeb who extended their complete support and helped to make me deliver my best. I would also like to thank all of my teachers at the National Engineering School of Sousse for their continuous help and treasurable training during our study years. 
-Finally, special thanks to the jury members who honored us by examining and evaluating this modest contribution.
+In conducting this report, I have received meaningful assistance from many quarters which I like to put on record here with deep gratitude and great pleasure.
+
+First and foremost, I express my sincere gratitude to my supervisors, Mr. Sabri Mtibaa, Ms. Marwa Drissi, and Mr. Aref Meddeb who extended their complete support and helped to make me deliver my best.
+
+I would also like to thank all of my teachers at the National Engineering School of Sousse for their continuous help and treasurable training during my study years. 
+
+Finally, a special thanks to the jury members who honored us by examining and evaluating this modest contribution.
 
 
 
@@ -136,7 +140,8 @@ Finally, special thanks to the jury members who honored us by examining and eval
 
 \chapter*{Abstract}
 This report describes the design and the development of our graduation project internship, which is carried out at Sofrecom Tunisia, the project consists in creating a remote and communicating devices platform to achieve broadband supervision and monitoring and assess the quality of service “QoS” of fixed network access.
-With our solution, the user could manage connected probes and create broadband tests configuration before running them in the probes, also he could manage statistics configuration with attractive charts for testing results. Users could create customized alerts configuration to simplify broadband supervision. The project also helps network supervisors to get accurate statistics according to a time period and zone area.
+
+With our solution, the user could manage connected probes and create broadband tests configuration before running them in the probes, also he could manage statistics configuration of testing results with attractive charts. Users could create customized alerts configuration to simplify broadband supervision. The project also helps network supervisors to get accurate statistics according to a time period and zone area.
 
 
 
@@ -148,24 +153,24 @@ Probe – Spring boot – Angular – Raspberry Pi – Java – Kafka – Broadb
 \pagenumbering{arabic} 
 
 \chapter*{General introduction}
-With the global spread of the internet nowadays, many mobile and internet services operators appear. In the coming days, connected devices will spread massively worldwide, especially with the appearance of new technologies such as the internet of things, big data, personal area networks (PAN), artificial intelligence (AI). So mobile and internet services operators desire to achieve a better quality of service for their customers. To do so, operators design and develop solutions for broadband monitoring and supervision mainly to massively assess and monitor the quality of service of networks access perceived by customers. Sofrecom Tunisia, subsidiary of Orange Group, attempts to serve this purpose by designing and developing a platform for broadband supervision and monitoring and specific to massively assess the quality of service (QoS) of fixed network access. In this context comes our mission during the graduation project internship.
+With the global spread of the internet nowadays, many mobile and internet services operators appear. In the coming days, connected devices will spread massively worldwide, especially with the appearance of new technologies such as the internet of things, big data, personal area networks (PAN), artificial intelligence (AI). So mobile and internet services operators desire to achieve a better quality of service for their customers. To do so, operators design and develop solutions for broadband monitoring and supervision ,mainly, to massively assess and monitor the quality of service of networks access perceived by customers. Sofrecom Tunisia, subsidiary of Orange Group, attempts to serve this purpose by designing and developing a platform for broadband supervision and monitoring and specifically  to massively assess the quality of service (QoS) of fixed network access. In this context comes our mission during the graduation project internship.
 
 This report contains four chapters as follows:
 
-The first chapter titled “Project context” will be devoted to the company presentation and setting the project in its general context.
+The first chapter titled “Project context” will be devoted to the company presentation and to set the project in its general context.
 
 The second chapter “Requirements analysis and specification” will be about the global system analysis to design and develop.
 
-The third chapter “Design of the physical and logical architectures” will be dedicated to present physical and the logical architectures of our solution, also, we will explain the theory behind the broadband monitoring and supervision.
+The third chapter “Design of the physical and logical architectures” will be dedicated to present physical and logical architectures of our solution, also, we will explain the theory behind the broadband monitoring and supervision.
 
 At last but not least, the final chapter “Project achievements” will be about the application achievements. First, we will present the developing environments and technologies and tools, secondly, we will illustrate our application with several interfaces.
 
-Finally, we will close the report with a general conclusion, future work and perspectives will be mentioned at last to illustrate some ideas to improve our solution.
+Finally, we will close the report with a general conclusion. Future work and perspectives will be mentioned at last to give some ideas to improve our solution.
 
 \chapter{Project Context}
 \section{Introduction}
 
-In the first place, this chapter will be about the host company Sofrecom Tunisia presentation, a consulting and engineering firm specializing in telecommunications. Then, we will talk about the work and the project environments, by putting the light on the project goals and the analysis of the state of the art. Finally, we will present our software development methodology and the modeling language that we are going to use.
+In the first place, this chapter will be about the host company, Sofrecom Tunisia presentation, a consulting and engineering firm specializing in telecommunications. Then, we will talk about work and project environments, by putting the light on the project goals and the analysis of the state of the art. Finally, we will present our software development methodology and the modeling language that we are going to use.
 
 \section{Host company presentation}
 
@@ -176,7 +181,7 @@ Sofrecom, a subsidiary of Orange Group, has built up 50 years’ worth of unique
 \subsection{Problem statement}
 Operators of mobile and internet services have probes, Key Performance Indicators (KPIs), installed in several network elements, but they desire to appreciate the quality perceived by their customers (Quality of Experience, QoE) in order to improve their network performance and reliability. 
 
-In order to get accurate information about the quality of experience we should get the measurements according to zone area and specific periods of time. Also, it is difficult to manage the configuration and QoS/QoE tests running in the widespread probes, which indicates a lack of flexibility. The internet usage is improving fast; therefore we should improve the quality of service measuring as well.
+In order to get the accurate information about the quality of experience, we should get the measurements according to zone area and specific periods of time. Also, it is difficult to manage the configuration and QoS/QoE tests running on the widespread probes, which indicates a lack of flexibility. The internet usage is improving fast; therefore we should improve the quality of service measuring as well.
 
 
 \subsection{Project objectives}
@@ -184,7 +189,7 @@ This work will be considered as a graduation project to obtain applied computer 
 
 The main project goal is to design and develop a platform for remote and communicating devices, to serve broadband monitoring and supervision. The application should satisfy these needs:
 \begin{itemize}
-\item The creation and interpretation of messages exchanged with terminals and embedded equipment.
+\item The creation and interpretation of messages exchanged with terminals and embedded equipments.
 \item Information exchanges with client applications (northbound interface).
 \item Management of messages from terminals (southbound interface).
 \item Sending requests and messages to the terminals.
@@ -194,11 +199,11 @@ The main project goal is to design and develop a platform for remote and communi
 \end{itemize}
 
 \section{Critical analysis of the state of the art}
-This step is essential to propose our solution in the relation to those offered by other companies. To do so, we have studied the characteristics and the features of some available apps while we focus on their weak points.
+This step is essential to propose our solution in the relation to those offered by other companies. To do so, we studies the characteristics and the features of some available apps while we focus on their weak points.
 
 \subsection{State of the art}
 \subsubsection{SamKnows One}
-The SamKnows One is a cloud-based analytics platform that includes a full range of measurement agents for fixed and cellular internet connection with a global test infrastructure. The SamKnows solution stores and visualizes performance data in real-time. This solution is implemented by a UK company “Sam” founded in 2008 by Sam Crawford. SamKnows One has developed a suite of tests\cite{SAMKNOWS} as follows:
+SamKnows One is a cloud-based analytics platform that includes a full range of measurement agents for fixed and cellular internet connection with a global test infrastructure. SamKnows solution stores and visualizes performance data in real-time. This solution is implemented by a UK company “Sam” founded in 2008 by Sam Crawford. SamKnows One has developed a suite of tests\cite{SAMKNOWS} as follows:
 \begin{itemize}
 \item	Speed tests: includes download and upload over TCP and UDP speed tests.
 \item	Latency, loss and jitter: latency, jitter and packet loss 	over UDP, latency over HTML5.
@@ -233,7 +238,7 @@ SMAQ is a solution implemented by Sofrecom to generate reports and analysis base
 
 
 \subsection{Critical of the state of the art}
-The following table shows in detail the difference between the two mentioned solutions:
+The following table shows in detail the differences between the two mentioned solutions:
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -245,16 +250,16 @@ Custom dashboard & YES         & NO \\ \hline
 Mapping data                 & YES         & NO  \\ \hline
 Generate reports                    & YES         & YES  \\ \hline
 Network monitoring (alerting)                    & YES         & YES \\ \hline
-Users management              & YES          & NO \\ \hline
-Devices management              & NO          & NO \\ \hline
-Tests management              & NO          & NO \\ \hline
+User management              & YES          & NO \\ \hline
+Device management              & NO          & NO \\ \hline
+Test management              & NO          & NO \\ \hline
 \end{tabular}
 \caption{Comparison of state of the art}
 \label{my-label}
 \end{table}
 
 
-Sofrecom Tunisia is looking for an open source solution for the issue in question so SamKnows One solution is not convenient for them, in the other hand SMAQ provides just the basic functionalities. The weak point in the mentioned solutions, they don’t give users the access to devices configuration. Network supervisors can’t customize tests to satisfy their specific needs.
+Sofrecom Tunisia is looking for an open source solution for the issue in question, so SamKnows One solution is not convenient for them. In the other hand SMAQ provides just the basic functionalities. The weak point in the mentioned solutions, they don’t give users the access to devices configuration. Network supervisors can’t customize tests to satisfy their specific needs.
 
 \subsection{Proposed solution:}
 The solution proposed by Sofrecom Tunisia is to design and develop a platform for broadband monitoring and supervision, “SMAQ Probes”, the solution should respond the following needs:
@@ -280,7 +285,7 @@ During the work on our solution we used UML “Unified Modeling Language” for 
 \section{Software development methodology}
 Before starting the project design and development, we should choose appropriate software development methodology to work with. The software development methodology helps to describe the different phases and the sequences of application development process.
 
-During our project, we used agile kanban because it is a most convenient method to us. I am the only intern working on the project. Changes in the project can happen any time. We are continuously improving the flow of work. We are trying to limit work in progress and to maximize efficiency. Also, we focus on reducing the time it takes to take a project from start to finish.
+During our project, we used agile kanban because it is the most convenient method to us. I am the only intern working on the project. Changes in the project can happen any time. We are continuously improving the flow of work. We are trying to limit work in progress and to maximize efficiency. Also, we focus on reducing the time it takes to take a project from start to finish.
 
 
 \section{Conclusion}
@@ -295,7 +300,7 @@ In the next chapter, we will model the requirements of our solution through use 
 
 The requirements analysis and specification phase is an essential step for the development of a new application. It allows presenting the application’s features in detail.
 
-In this chapter, the first part will be devoted to identify the different actors of the application who are interacting with the system and to give the functional and nonfunctional requirements definitions. Subsequently, we will present the general system analysis using use case diagrams.
+In this chapter, the first part will be devoted to identify the different actors of the application who are interacting with the system, and to give the functional and nonfunctional requirements definitions. Subsequently, we will present the general system analysis using use case diagrams.
 
 \section{Identification of the actors:}
 An actor is an abstraction of a role of actual user who is in a perpetual interaction with the application. Following on, our system’s actor along with his role and granted permissions.
@@ -303,15 +308,15 @@ An actor is an abstraction of a role of actual user who is in a perpetual intera
 \subsection*{Internal actors}
 
 \begin{itemize}
-\item	Application administrator: the administrator is responsible of managing users and their permission, he has the permission to create, read, update, and delete users. Also, he has the permission to check all the other configurations like devices configuration and test configuration.
+\item	Application administrator: the administrator is responsible for managing user and his permission, he has the permission to create, read, update, and delete users. Also, he has the permission to check all the other configurations like devices and tests configurations.
 \item	Network supervisor: the network supervisor has the permission to read the different configurations without editing them. He has the right to supervise the quality of experience “QOS”.
-\item	Network and broadband administrator: he has all the rights of the network supervisor, in addition, he has the permission to create, read, update, and delete broadband monitoring configurations.
+\item	Network and broadband administrator: he has all the rights of the network supervisor. In addition, he has the permission to create, read, update, and delete broadband monitoring configurations.
 \end{itemize}
 
 \subsection*{External actors}
 
 \begin{itemize}
-\item	Probe: the probe is the entity able to get devices and tests configuration, and send the metrics to the server after running tests.
+\item	Probe: the probe is the entity able to receive devices and tests configurations, and send the metrics to the server after running tests.
 \end{itemize}
 
 \section{Functional requirements}
@@ -320,10 +325,10 @@ Functional requirements refer to primary functions that each component of our so
 \subsection*{For the web application}
 
 \begin{itemize}
-\item	The application should give the administrator the hand to manage users’ accounts.
+\item	The application should give the administrator the hand to manage user account.
 \item	The application should give permitted users the possibility to customize their dashboards.
-\item	The application should give permitted users the access to manage the network monitoring (alerting).
-\item	The application should provide permitted users with the access to tests and devices configurations.
+\item	The application should give permitted users the access to manage the network monitoring configuration(alerting).
+\item	The application should provide permitted users with the access to manage tests and devices configurations.
 \item	The application should be able to process received metrics data in real-time.
 \end{itemize}
 
@@ -331,9 +336,9 @@ Functional requirements refer to primary functions that each component of our so
 
 \begin{itemize}
 \item	The boards should be able to receive and implement their configurations in real-time.
-\item	The boards should be able to run tests according to the time scheduler and send results to the server.
+\item	The boards should be able to run tests according to the time schedule and send results to the server.
 \item	The boards should be able to send their current configuration (location, IP address, device identifier, jobs configuration).
-\item	The boards should be able to keep the tests results if the server is not available.
+\item	The boards should be able to keep tests results if the server is not available.
 \end{itemize}
 
 \section{Non-functional requirements}
@@ -364,7 +369,7 @@ On one hand, this section offers a better understanding of the mentioned require
 \label{fig:usecasegeneral}
 \end{figure}
 
-As shown in the general use case diagram (fig.\ref{fig:usecasegeneral}), only the administrator can register all types of users. All the features of the application must go through authentication. The network and broadband supervisor is responsible for managing network monitoring, devices configuration, tests, and statistics configuration. Any configuration that concerns probes configuration will be sent to probes. Probes send their information and runs tests according to a job scheduler, then probes send tests results to the server, thus, our system process the received data in real-time. Finally our system is prepared to generate statistics and quality of service for the network supervisor.
+As shown in the general use case diagram (fig.\ref{fig:usecasegeneral}), only the administrator can register all types of users. All the features of the application must go through authentication. The network and broadband supervisor is responsible for managing network monitoring, devices configuration, tests, and statistics configuration. Any configuration that concerns probes is delivered to them. Probes send their information and runs tests according to a job scheduler then probes send tests results to the server. Thus, our system process the received data in real-time. Finally our application is prepared to generate statistics and quality of service for the network supervisor.
 
 \subsection{Manage devices}
 
@@ -395,14 +400,14 @@ Exceptional story & \begin{tabular}[c]{@{}l@{}}The device in question is not con
 \label{my-label}
 \end{table}
 
-As shown in the devices management sequence diagram (fig.\ref{fig:devicesequence}), the device management functionality is permitted to network and broadband administrators. User can access to the devices list. User can select a device to edit its configuration (IP address, location, registered client name, job scheduling), if user submits the new configuration, the configuration will be sent to the backend system to persist it to database. Also the configuration will be sent to the device in question, the probe, device, implements the changes. Finally, the probe sends back the implemented configurations to the system as a confirmation.
+As shown in the devices management sequence diagram (fig.\ref{fig:devicesequence}), the device management functionality is permitted to network and broadband administrators. User can access to the devices list. The user can select a device to edit its configuration (IP address, location, registered client name, job scheduling), if user submits the new configuration, the configuration will be sent to the backend system to persist it to database. Also the configuration will be delivered to the device in question. The probe, device, implements the changes. Finally, the probe sends back the implemented configurations to the system as a confirmation.
 
 \subsection{Manage tests}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm, height=13cm]{tests-management-sequence-diagram.png}
-\caption{Tests management sequence diagram}
+\caption{Test management sequence diagram}
 \label{fig:testsequence}
 \end{figure}
 
@@ -410,7 +415,7 @@ As shown in the devices management sequence diagram (fig.\ref{fig:devicesequence
 \centering
 \begin{tabular}{|l|l|}
 \hline
-Title             & Tests management                                                                                                                                                                                                                                                                                    \\ \hline
+Title             & Test management                                                                                                                                                                                                                                                                                    \\ \hline
 Author            & Ismail MEKNI                                                                                                                                                                                                                                                                             \\ \hline
 Version           & 1.0                                                                                                                                                                                                                                                                                             \\ \hline
 Objectives        & Allow users to manage tests configuration.
@@ -418,16 +423,16 @@ Objectives        & Allow users to manage tests configuration.
 Actors            & \begin{tabular}[c]{@{}l@{}}Network and broadband administrator – SMAQ Probes – \\Probe\end{tabular}
 \\ \hline
 Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as network and broadband \\administrator.\\ At least one device should be connected.\end{tabular}                                                                                                                                                                  \\ \hline
-Post-conditions   & \begin{tabular}[c]{@{}l@{}}New tests configuration is persisted in the database.\\ New tests are running on the probes.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Post-conditions   & \begin{tabular}[c]{@{}l@{}}New tests configuration is persisted to database.\\ New tests are running on the probes.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 Story             & \begin{tabular}[c]{@{}l@{}}1. The user tests each element directly on the device.\\ 2. The user submits the test configuration with all elements.\end{tabular}                                                                                    \\ \hline
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
-Exceptional story & \begin{tabular}[c]{@{}l@{}}There is no connected device, so user can’t test elements,\\ the operation with be suspended until at least one device\\ reconnect.\end{tabular} \\ \hline
+Exceptional story & \begin{tabular}[c]{@{}l@{}}There is no connected device, so user can’t test elements,\\ the operation with be suspended until at least one device\\ reconnects.\end{tabular} \\ \hline
 \end{tabular}
 \caption{Test management description}
 \label{my-label}
 \end{table}
 
-As shown above in the diagram (fig.\ref{fig:testsequence}), the access to the test configuration is granted to users with network and broadband administrator role. To edit test configuration, user should enter test elements, each element must be tested directly on the probe, device, and then test’s element result will be sent back to the user. After creating and testing all the elements, a new test configuration will be sent to the backend system. The configuration is persisted to database. The new test configuration is sent to the probes, all the probes implement the new test configuration. Finally a signal messages is sent from all the probes holding the current configurations.
+As shown above in the diagram (fig.\ref{fig:testsequence}), the access to the test configuration is granted to users with network and broadband administrator role. To edit test configuration, user should enter test elements, each element must be tested directly on the probe, device, and then test’s element result will be sent back to the user. After creating and testing all the elements, a new test configuration will be sent to the backend system. The configuration is persisted to database. The new test configuration is sent to the probes. All the probes implement the new test configuration. Finally a signal messages is sent from all the probes holding the current configurations.
 
 \subsection{Manage network monitoring}
 
@@ -451,8 +456,8 @@ Objectives        & \begin{tabular}[c]{@{}l@{}} Allow users to manage network mo
 Actors            & \begin{tabular}[c]{@{}l@{}}Network and broadband administrator – Network supervisor\\ – SMAQ Probes\end{tabular}
 \\ \hline
 Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as network and broadband \\administrator to access the network monitoring management.\\ To view triggered alerts, the user should authenticate as a\\ network supervisor.\end{tabular}                                                                                                                                                                  \\ \hline
-Post-conditions   & \begin{tabular}[c]{@{}l@{}}New alert configuration is persisted in the database.\\ Alert listener is running on the received metrics.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
-Story             & \begin{tabular}[c]{@{}l@{}}1. The user send alert configuration containing the constraint.\\ 2. The network supervisor can view alerts if triggered.\end{tabular}                                                                                    \\ \hline
+Post-conditions   & \begin{tabular}[c]{@{}l@{}}New alert configuration is persisted to database.\\ An alert listener is running on the received metrics.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Story             & \begin{tabular}[c]{@{}l@{}}1. The user send alert configuration containing the constraint.\\ 2. The network supervisor can view alerts if it is triggered.\end{tabular}                                                                                    \\ \hline
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}\end{tabular} \\ \hline
 \end{tabular}
@@ -460,14 +465,14 @@ Exceptional story & \begin{tabular}[c]{@{}l@{}}\end{tabular} \\ \hline
 \label{my-label}
 \end{table}
 
-As shown in the diagram (fig.\ref{fig:monitoringsequence}), the user authenticates with network and broadband administrator. This feature aims to configure customized alerts. User creates alerts with a specific constraint. This configuration will be persisted to database. An alert checker will be run for every received metrics data, if the constraint is satisfied an alert with full description will be triggered. The triggered alerts are persisted to database so network supervisors can check them.
+As shown in the diagram (fig.\ref{fig:monitoringsequence}), the user authenticates as a network and broadband administrator. This feature aims to configure customized alerts. User creates alerts with a specific constraint. This configuration will be persisted to database. An alert checker will be run for every received metrics data, if the constraint is satisfied an alert with full description will be triggered. The triggered alerts are persisted to database so network supervisors can check them.
 
-\subsection{Manage statistics and charts configuration}
+\subsection{Manage statistics and charts configurations}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm, height=14cm]{charts-management-sequence-diagram.png}
-\caption{Charts management sequence diagram}
+\caption{Chart management sequence diagram}
 \label{fig:chartssequence}
 \end{figure}
 
@@ -475,7 +480,7 @@ As shown in the diagram (fig.\ref{fig:monitoringsequence}), the user authenticat
 \centering
 \begin{tabular}{|l|l|}
 \hline
-Title             & Charts and statistics management
+Title             & Chart and statistic management
 \\ \hline
 Author            & Ismail MEKNI                                                                                                                                                                                                                                                                             \\ \hline
 Version           & 1.0                                                                                                                                                                                                                                                                                             \\ \hline
@@ -483,24 +488,24 @@ Objectives        & Allow users to manage charts configuration.
  \\ \hline
 Actors            & \begin{tabular}[c]{@{}l@{}}Network and broadband administrator – Network supervisor\\ – SMAQ Probes\end{tabular}
 \\ \hline
-Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as network and broadband \\administrator to access charts and statistics management.\\ To view dashboard, the user should authenticate as a \\network supervisor.\end{tabular}                                                                                                                                                                  \\ \hline
-Post-conditions   & \begin{tabular}[c]{@{}l@{}}New chart configuration is persisted in the database.\\ New chart is added to dashboard.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
-Story             & \begin{tabular}[c]{@{}l@{}}1. The user send chart configuration, system generates chart \\dataset.\\ 2. Chart displayed to user.\\ 3. User submit chart configuration.\end{tabular}                                                                                    \\ \hline
+Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as network and broadband \\administrator to access chart and statistic management.\\ To view the dashboard, the user should authenticate as a \\network supervisor.\end{tabular}                                                                                                                                                                  \\ \hline
+Post-conditions   & \begin{tabular}[c]{@{}l@{}}New chart configuration is persisted to database.\\ New chart is added to dashboard.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Story             & \begin{tabular}[c]{@{}l@{}}1. The user send chart configuration, system generates chart \\dataset.\\ 2. Chart displayed to user.\\ 3. The user submits chart configuration.\end{tabular}                                                                                    \\ \hline
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}\end{tabular} \\ \hline
 \end{tabular}
-\caption{Charts management description}
+\caption{Chart management description}
 \label{my-label}
 \end{table}
 
-As we can see in the above sequence diagram (fig.\ref{fig:chartssequence}), to access to charts and statistics configuration, users should have network and broadband administrator privileges. User enters the chart parameters; our system generates the chart in question. User submits this configuration to be persisted and added to dashboard. Thus, users with network supervisor permission can see the configured charts on the dashboard. This feature aims to allow users to create customized charts and views.
+As we can see in the above sequence diagram (fig.\ref{fig:chartssequence}), to access to chart and statistic configurations, users should have network and broadband administrator privileges. The user enters the chart parameters, so our system generates the chart in question. The user submits this configuration to be persisted and added to dashboard. Thus, users with network supervisor permission can see the configured charts on the dashboard. This feature aims to allow users to create customized charts and views.
 
-\subsection{Manage users}
+\subsection{Manage user}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm, height=14cm]{users-management-sequence-diagram.png}
-\caption{Users’ management sequence diagram}
+\caption{User management sequence diagram}
 \label{fig:userssequence}
 \end{figure}
 
@@ -508,30 +513,30 @@ As we can see in the above sequence diagram (fig.\ref{fig:chartssequence}), to a
 \centering
 \begin{tabular}{|l|l|}
 \hline
-Title             & Users management
+Title             & User management
 \\ \hline
 Author            & Ismail MEKNI                                                                                                                                                                                                                                                                             \\ \hline
 Version           & 1.0                                                                                                                                                                                                                                                                                             \\ \hline
-Objectives        & \begin{tabular}[c]{@{}l@{}}Allow administrator to manage users’ configuration and \\details.\end{tabular}
+Objectives        & \begin{tabular}[c]{@{}l@{}}Allow administrator to manage user configuration and \\details.\end{tabular}
  \\ \hline
 Actors            & \begin{tabular}[c]{@{}l@{}}Administrator – Network supervisor – SMAQ Probes\end{tabular}
 \\ \hline
-Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as application administrator to \\access the users’ management.\end{tabular}                                                                                                                                                                  \\ \hline
-Post-conditions   & \begin{tabular}[c]{@{}l@{}}User credential is persisted to database.\\User can authenticate.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
-Story             & \begin{tabular}[c]{@{}l@{}}1. The administrator submit user configuration.\\ 2. The user submits his credentials.\end{tabular}                                                                                   
+Pre-conditions    & \begin{tabular}[c]{@{}l@{}}The user should authenticate as application administrator to \\access the user management feature.\end{tabular}                                                                                                                                                                  \\ \hline
+Post-conditions   & \begin{tabular}[c]{@{}l@{}}The user credential is persisted to database.\\User can authenticate.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Story             & \begin{tabular}[c]{@{}l@{}}1. The administrator submits user configuration.\\ 2. The user submits his credentials.\end{tabular}                                                                                   
  \\ \hline
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}If the user enters invalid credentials, he will be prompted to \\try to login again.\end{tabular} \\ \hline
 \end{tabular}
-\caption{Users management description}
+\caption{User management description}
 \label{my-label}
 \end{table}
 
-As shown in the users' management sequence diagram (fig.\ref{fig:userssequence}), the users’ management feature is only allowed to the application administrator. The administrator enters the credentials of each user. Thus, user is now registered to the application and he can access to the application features according to his privileges. To sign in to the application, the user enters his credentials, generally a username and a password, if the credentials are valid, he will be redirected to the dashboard, and else he will be prompted to login again. 
+As shown in the user management sequence diagram (fig.\ref{fig:userssequence}), the user management feature is only allowed to the application administrator. The administrator enters the credentials of each user. Thus, the user is now registered to the application and he can access to the features depending to his privileges. To sign in to the application, the user enters his credentials, generally a username and a password, if the credentials are valid, he will be redirected to the dashboard, and else he will be prompted to login again. 
 
 \section{Conclusion}
 
-Throughout this chapter, we specified and analyzed the requirements that solution should deliver to users, and we presented the main scenarios and the use cases that it should offer.
+Throughout this chapter, we specified and analyzed the requirements that the solution should deliver to users, and we presented the main scenarios and the use cases that it should offer.
 
 The next chapter aims to go a step further in the process of developing the application via presenting the design of the different components of our system.
 
@@ -539,7 +544,7 @@ The next chapter aims to go a step further in the process of developing the appl
 \chapter{Design of the Physical and Logical Architectures}
 
 \section{Introduction}
-In order to reach the appropriate result as described in the specifications, we need to clarify the project’s main architecture as well as the architecture of its components. This chapter will focuses on designing a suitable structure for the smart parking system. This step is considered as the most crucial of the process because it prepares the ground for the implementation phase.
+In order to reach the appropriate result as described in the specifications, we need to clarify the project’s main architecture as well as the architecture of its components. This chapter will focus on designing a suitable structure for the broadband monitoring and supervision system. This step is considered as the most crucial of the process because it prepares the ground for the implementation phase.
 
 \section{Physical architecture}
 The architecture presented in (fig.\ref{fig:physicalarchitecture}) is the physical architecture of our system. 
@@ -558,13 +563,13 @@ The system is composed mainly from the following parts: the probes (Raspberry Pi
 
 The probes represent the entity that executes the scheduled tests and sends the metrics to Kafka cluster through the Google protocol buffer.
 
-The client web part represents the part with which the final users interacts and they are essentially: the Web platform accessible by the application users, application administrator, network supervisors and network and broadband administrators.
+The client web part represents the part with which the final users interacts and it is essentially: the Web platform accessible by the application users, application administrator, network supervisors and network and broadband administrators.
 
-The third part, the cloud server, is where the application will be hosted, this part is responsible for receiving and processing data coming from Kafka cluster, also it is responsible for data analysis and configurations persistent to our database.
+The third part, the cloud server, is where the application is hosted, this part is responsible for receiving and processing data coming from Kafka cluster, also it is responsible for data analysis and configurations persistent to our database.
 
 \section{Logical architecture}
 \subsection{Conceptual model}
-The (fig.\ref{fig:logicalarchitecture}) shows the logical architecture of the system.
+The figure (fig.\ref{fig:logicalarchitecture}) shows the logical architecture of the system.
 
 \begin{figure}[H]
 \centering
@@ -576,7 +581,7 @@ The (fig.\ref{fig:logicalarchitecture}) shows the logical architecture of the sy
 According to the figure of the logical architecture, the system is composed from three major parts:
 \begin{itemize}
 \item	Probes: this parts represents widespread devices, these devices are the entities that handles tests. There are several scripts responsible for running the tests with efficient schedules. All the messages are serialized with Google Protocol Buffer. There is a Kafka client responsible for publishing and receiving messages\cite{RDKAFKA}.
-\item	Cloud server: this server is the entity that holds the application logic. It holds within him a Google Protocol Buffer converter. Kafka stream is the layer that process the received data in real-time with high performance\cite{KAFKASTREAM}. Spring Boot application is a three tiers web application, it is responsible for managing the features of our system including metrics analytics.
+\item	Cloud application: this part is the entity that holds the application logic. It holds within it a Google Protocol Buffer converter. Kafka stream is the layer that process the received data in real-time with high performance\cite{KAFKASTREAM}. Spring Boot application is a three tier web application, it is responsible for managing the features of our system including metrics analytics.
 \item	Angular: this entity is the frontend application accessible to users across the Web\cite{ANGULAR}.
 \end{itemize}
 
@@ -584,7 +589,7 @@ The connection between the web application and the user interface is guaranteed 
 
 Kafka cluster is playing the role of a middleware between the probes and the backend server.
 
-Finally we have our database, we have chosen MongDB as a database management system for performance reasons, and it is accessible only through the three tiers web application.
+Finally we have our database, we have chosen MongDB as a database management system for performance reasons, and it is accessible only through the three tier web application.
 
 
 \subsection{Modular decomposition}
@@ -599,7 +604,7 @@ This class diagram is efficient in the case of MongoDB database management syste
 \end{figure}
 
 \subsubsection{Package diagram}
-The package diagram is a static view that serves to globally describe the different components of the application. The (fig.\ref{fig:packagediagram}) presents the package diagram of our solution to have an overview its different elements.
+The package diagram is a static view that serves to globally describe the different components of the application. The (fig.\ref{fig:packagediagram}) presents the package diagram of our solution in order to have an overview of its different elements.
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{packagediagram.png}
@@ -607,18 +612,18 @@ The package diagram is a static view that serves to globally describe the differ
 \label{fig:packagediagram}
 \end{figure}
 
-\subsubsection{Devices management module}
-This module describes devices management process. This module is about 	editing, deleting, and checking available devices. There is no meaning of creating device because the device information will be sent by the device if it is connected.
+\subsubsection{Device management module}
+This module describes device management process. This module is about 	editing, deleting, and checking available devices. There is no meaning of creating device because the device information will be sent by it if it is connected.
 
 The following class diagram (fig.\ref{fig:deviceclassdiagram}) presents the involved classes and components that build the module.
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{deviceclassdiagram.png}
-\caption{Package diagram of the backend application}
+\caption{Class diagram of the device management module}
 \label{fig:deviceclassdiagram}
 \end{figure}
 
-Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the update device operation:
+Then, we have the sequence diagram that describes the interactions between the module's components; this diagram presents the update device operation:
 
 \begin{figure}[H]
 \centering
@@ -636,41 +641,41 @@ The diagram below is the sequence diagram for the update Cron operation. Cron is
 \label{fig:cronsequencediagram}
 \end{figure}
 
-The device configuration consists of the device general information (IP address, device ID, location…) and the jobs running on the device in question. First, the user fills the form of device information, after, he submits this information. Using REST web services we deliver the new configuration from frontend application to backend side. Finally, the backend save the new configuration to our database and send it to the device in question in order to consider the new changes.
+The device configuration consists of the device general information (IP address, device ID, location…) and the jobs running on it. First, the user fills the form of device information, after, he submits this information. Using REST web services we deliver the new configuration from frontend application to backend side. Finally, the backend save the new configuration in our database and send it to the device in question in order to consider the new changes.
 
 For Cron configuration, we follow the same process; the user submits the new configuration, after, this configuration will be sent to backend in JSON objects forma. Finally, our backend application implements the changes in the database and the device.
 
 
-\subsubsection{Metrics and tests management module}
-This module describes tests management process. This module is about creating, editing, deleting, and checking available devices.
+\subsubsection{Metric and test management module}
+This module describes test management process. This module is about creating, editing, deleting, and checking available tests.
 The following class diagram (fig.\ref{fig:metricclassdiagram}) presents the involved classes and components that build our module.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{metricclassdiagram.png}
-\caption{Class diagram of the tests and metrics management module}
+\caption{Class diagram of the test and metric management module}
 \label{fig:metricclassdiagram}
 \end{figure}
 
-Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating tests operations:
+Then, we have the sequence diagram that describes the interactions between the module's components; this diagram presents the creation and updating tests operations:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm,height=10cm]{metricsequencediagram.png}
-\caption{Sequence diagram of metrics and tests creation and updating operation}
+\caption{Sequence diagram of the metrics and tests creation and updating operations}
 \label{fig:metricsequencediagram}
 \end{figure}
 
-The metrics and tests configuration consists of the describing the general test information (test name, test unit, schedules) and the test elements configuration. A test element is a command line or even a script. To achieve better performance, each test element will be tested directly on the Raspberry board going through the frontend application to the backend application to reach our Kafka cluster, the element will be tested and the results will be sent back to Kafka, finally the results data will takes back the same path to reach the user interface. The user configures the element with its results. To finish, the user submits the entire test’s configuration to the web application.
+The metrics and tests configuration consists of describing the general test information (test name, test unit, schedules) and the test elements configuration. A test element is a command line or even a script. To achieve better performance, each test element will be tested directly on the Raspberry board going through the frontend application to the backend application to reach our Kafka cluster, the element will be tested, and the results will be sent back to Kafka. Finally the results data will takes back the same path to reach the user interface. The user configures the element with its results. To finish, the user submits the entire test’s configuration to the web application.
 
-We must note that the updating and creation operations are the same because we are using MongoDB as a database, if the object is already in the database, MongoDB will edit it, and else the object will be created.
+We must note that the updating and creation operations are the same because we are using MongoDB as a database, if the object is already persisted, MongoDB will edit it, and else the object will be created.
 
 
 
 \subsubsection{Network monitoring management module}
 This module describes network monitoring management process. This module is about creating, editing, deleting, and checking available alerts information and constraints.
 
-The following class diagram (fig.\ref{fig:alertclassdiagram}) presents the involved classes and components that build network monitoring module.
+The following class diagram (fig.\ref{fig:alertclassdiagram}) presents the involved classes and components that build the network monitoring module.
 
 \begin{figure}[H]
 \centering
@@ -679,38 +684,38 @@ The following class diagram (fig.\ref{fig:alertclassdiagram}) presents the invol
 \label{fig:alertclassdiagram}
 \end{figure}
 
-Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating alerts operations:
+Then, we have the sequence diagram that describes the interactions between the module's components; this diagram presents the creation and updating alerts operations:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm,height=10cm]{alertsequencediagram.png}
-\caption{Sequence diagram of alerts creation and updating operation}
+\caption{Sequence diagram of the alerts creation and updating operations}
 \label{fig:alertsequencediagram}
 \end{figure}
 
-The network monitoring configuration consists of creating customized alerts to help network supervisors. The network and broadband administrator fill the form that contains alert information (alert title, alert description, involved test, alert constraint) through the graphic user interface. The alert constraint is a logic expression that defines when the alert will be triggered. The configuration is sent from the frontend to backend with REST web services. The web application saves the alert configuration. The other details about the network monitoring concerning alert triggering and supervision will be explained and clarified in a separate part. 
+The network monitoring configuration consists of creating customized alerts to help network supervisors obtain btter vision of the quality of experience. The network and broadband administrator fill the form that contains alert information (alert title, alert description, involved test, alert constraint) through the graphic user interface. The alert constraint is a logic expression that defines when the alert will be triggered. The configuration is sent from the frontend to backend with REST web services. The web application saves the alert configuration. The other details about the network monitoring concerning alert triggering and supervision will be explained and clarified in a separate part. 
 
 
 
 
-\subsubsection{Statistics and charts management module}
-This module describes statistics and charts management process. This module is about 	editing, deleting, and checking available charts and views. 
+\subsubsection{Statistic and chart management module}
+This module describes statistic and chart management process. This module is about creating, editing, deleting, and checking charts and views. 
 
 The following class diagram (fig.\ref{fig:viewclassdiagram}) presents the involved classes and components that build the module.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{viewclassdiagram.png}
-\caption{Class diagram of the statistics and charts management module}
+\caption{Class diagram of the statistic and chart management module}
 \label{fig:viewclassdiagram}
 \end{figure}
 
-Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation views operation:
+Then, we have the sequence diagram that describes the interactions between the module's components; this diagram presents the view creation operation:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm,height=10cm]{viewsequencediagram.png}
-\caption{Sequence diagram of views creation operation}
+\caption{Sequence diagram of view creation operation}
 \label{fig:viewsequencediagram}
 \end{figure}
 
@@ -719,51 +724,51 @@ The diagram below is the sequence diagram for dashboard generation operation.
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm,height=10cm]{dashboardsequencediagram.png}
-\caption{Sequence diagram of dashboard operation}
+\caption{Sequence diagram of dashboard generation operation}
 \label{fig:dashboardsequencediagram}
 \end{figure}
 
-The statistics and charts configuration consists of creating a model carrying a view configuration that we can use it to generate the same view each time. The statistics and charts management module contains two parts, the first one is the views configuration and the second one is the dashboard generation. 
+The statistics and charts configuration consists of creating a model carrying a view configuration that we can use it to generate the same view each time. The statistic and chart management module contains two parts, the first one is the views configuration and the second one is the dashboard generation. 
 
-To achieve creating customized views, from the presentation layer, Angular application, the user put the configuration he needs to generate the chart. This configuration goes through REST web service to the backend controller, then to the service layer. The service layer will take the view configuration as parameter to fetch the metrics data, stored in MongoDB, and process the received data in order create view dataset. The chart dataset goes through REST web service again to reach the frontend application arriving to the user interface. At this point, the user has the option to add this view to the dashboard, so the data.
+To achieve creating customized views through the graphic user interface, our Angular application, the user put the configuration he needs to generate the chart. This configuration parameters go through REST web service to the backend controller, then to the service layer. The service layer will take the view configuration as parameter to fetch the involved metrics data, stored in MongoDB, and process the received data in order to create the view dataset. The chart dataset goes through REST web service again to reach the frontend application arriving to the user interface. At this point, the user has the option to save this configuration in order to add this customized view to the dashboard.
 
-The second part is the dashboard generation, when the user navigate to dashboard, there are three filters, time filter, location filter, and test filter. A request will be sent from the user interface and the Angular component and service to the backend through REST web service carrying the filters inputs. Views are fetched according to the test filter, and then the metrics data is fetched according location and time filter. The metrics data is processed to generate dataset for each view in the dashboard. Finally, the charts datasets goes back to the user interface.
-
-
+The second part is the dashboard generation, when the user navigate to the dashboard, there are three available filters, time filter, location filter, and test filter. A request will be sent from the user interface and the Angular component and service to the backend through REST web service carrying the filters inputs. Views are fetched according to the test filter, and then the metrics data is fetched according to location and time filters. The metrics data is processed to generate dataset for each involved view in the dashboard. Finally, the charts datasets goes back to the user interface.
 
 
-\subsubsection{Authentication and users management module}
-This module describes authentication and users accounts management process. This module is about creating, editing, deleting, and checking available users’ information.
+
+
+\subsubsection{Authentication and user management module}
+This module describes authentication and user account management process. This module is about creating, editing, deleting, and checking available users’ information.
 
 The following class diagram (fig.\ref{fig:userclassdiagram}) presents the involved classes and components that build our module.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{userclassdiagram.png}
-\caption{Class diagram of the authentication and users management module}
+\caption{Class diagram of the authentication and user management module}
 \label{fig:userclassdiagram}
 \end{figure}
 
-Then, we have the sequence diagram that describes the interaction between the module components; this diagram presents the creation and updating users’ information operations:
+Then, we have the sequence diagram that describes the interactions between the module's components; this diagram presents the creation and updating users’ information operations:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm,height=10cm]{usersequencediagram.png}
-\caption{Sequence diagram of users’ creation and updating operations}
+\caption{Sequence diagram of the user creation and updating operations}
 \label{fig:usersequencediagram}
 \end{figure}
 
-The user configuration consists of creating a personalized user account that holds a username, a password, and a role or privilege.
+The user configuration consists of creating a personalized user account that holds a username, a password, and a role or privilege for the user.
 
-The administrator just needs to fill the form with the user information. After finishing, a request is sent to the backend application in order to persist the user information. At this point, the user is able to authenticate.
+The administrator just needs to fill the form with the user information. After finishing, a request is sent to the backend application in order to persist these information. At this point, the user is able to authenticate.
 
 
 \subsection{Broadband supervision and monitoring theory}
-In the previous parts of the report we talked about the features offered by our solution concerning analytics and components management, although we did not emphasize the real-time network monitoring and metrics data processing. Also we need to clarify how the probes are handling tests and received configurations.
+In the previous parts of the report we talked about the features offered by our solution concerning analytics and management of each component, although we did not emphasize the real-time network monitoring and metrics data processing. Also we need to clarify how the probes are handling tests and received configurations.
 
 \paragraph{Tests and jobs handling between probes and Kafka}
 ~\\
-We are using Kafka as mediator between the server and the probes. For every reboot, devices send their initial configuration to Kafka, in the counterpart, the devices receives their configurations, these configurations holds within it jobs and tests. The embedded application schedules the jobs using Crontab\cite{CRONTAB}. There a listener implemented on the boards in order to wait for configuration changes. The following (fig.\ref{fig:scriptskafka}) illustrates the interactions between a probe and Kafka. 
+We are using Kafka as a mediator between the server and the probes. For every reboot, devices send their initial information to Kafka, in the counterpart, the devices receives their personalized configurations, these configurations holds within it personalized  jobs and tests. The embedded application schedules the jobs using Crontab\cite{CRONTAB}. There is a listener implemented on the boards in order to wait for configuration changes. The following (fig.\ref{fig:scriptskafka}) illustrates the interactions between a probe and Kafka. 
 
 \begin{figure}[H]
 \centering
@@ -774,19 +779,19 @@ We are using Kafka as mediator between the server and the probes. For every rebo
 
 \paragraph{Real-time processing and network monitoring}
 ~\\
-As we mentioned earlier, after setting up the tests and alerts configurations, we have real-time data processing, this point is the crucial point of our solution. This part can decide the level of performance of the system. To achieve this task, we chose Kafka Stream.
+As we mentioned earlier, after setting up the tests and alerts configurations, we have the real-time data processing, this point is the crucial point of our solution. This part can decide the level of the performance of the system. To achieve this task, we chose Kafka Stream.
 
-Kafka Stream is a Kafka client that can handles real-time processing on data coming from a Kafka cluster or broker. Kafka stream subscribes to Business data topic, for each received test result, Kafka Stream brings the alerts configuration concerning the test in question, after, it tests the alerts constraints on the received data, if there is a satisfied constraint, it triggers a specific alert.
+Kafka Stream is a Kafka client that can handles real-time processing on data coming from a Kafka cluster or broker. Kafka stream subscribes to Business data topic. For each received test result, Kafka Stream brings the alerts configuration concerning the test in question, after, it tests the alerts constraints on the received data, if a constraint is satisfied, it triggers a specific alert holding a full description.
 
-Another mission for Kafka Stream is to parse the received data in order to extract the metrics values to store it in MongoDB. However, between data parsing and storage, there is a specific processing for specific tests. In order to explain that, we should know that defining the quality of experience needs to have measurements from different timestamps with specific periods of time. To conclude, a complex calculation is required before storing data to have a better idea about the quality of experience.
+Another mission for Kafka Stream is to parse the received data in order to extract the metrics values to store it in MongoDB. However, between data parsing and storage, there is a specific processing for specific tests. In order to explain that, we should know that defining the quality of experience needs to have measurements from different timestamps with specific periods of time. To conclude, a complex calculation is required before storing data to have a better vision of the quality of experience.
 
-Another crucial point in our solution, we need to have a high performance data analytics, MongoDB is an oriented document non-relational database that supports well indexing technique\cite{MONGODB}. MongoDB provides advanced querying operations that we used to perform our analytics with customized filters.
+Another crucial point in our solution, we need to have a high performance data analytics, MongoDB is an oriented document non-relational database management system that well supports indexing techniques\cite{MONGODB}. MongoDB provides advanced querying operations that we used to perform our analytics with customized filters.
 
 
 
 
 \section{Conclusion}
-Through this chapter, we described each part of the solution, its functionalities both separately and when coordinating with other parts of the system. We also explained subsequently the choice of our logical and physical architecture. Concerning the detailed design, we exhibited the class and sequence diagram. In the next chapter, we present and expose the technologies employed during the process of the creation of our product.
+Through this chapter, we described each part of the solution, its functionalities both separately and when coordinating with other parts of the system. We also explained subsequently the choice of our logical and physical architectures. Concerning the detailed design, we exhibited the class and sequence diagrams. In the next chapter, we present and expose the technologies employed during the process of the creation of our product.
 
 \chapter{Project Achievements}
 
@@ -795,13 +800,13 @@ In this chapter, we will discuss the process of implementing the different parts
 
 \section{Developing environment}
 \subsection{Hardware envionment}
-To achieve our project, we have used a DELL computer with a Windows 7 operating system. The characteristics of the used computer are provided below:
+To achieve our project development, we have used a DELL computer with a Windows 7 operating system. The characteristics of the used computer are provided below:
 \begin{itemize}
 \item	CPU: intel i5 2.3 Ghz
 \item	RAM: 8 GB
 \item	Hard Disk Drive: 500 GB
 \end{itemize}
-For the probes, we have used Raspberry Pi 3 B+ model with an embedded Raspbian operation system. The characteristics of the board are provided below:
+For the probes, we have used Raspberry Pi 3 model B+ with an embedded Raspbian operation system. The characteristics of the board are provided below:
 \begin{itemize}
 \item   CPU: 64-bit quad-core ARM v8
 \item	RAM: 1 GB
@@ -814,11 +819,11 @@ In this part, we list the software programs and applications we used throughout 
 \item	Netbeans IDE 8.2: Netbeans is an integrated development environment developed by Oracle. Netbeans can be used with many programming languages; in our case we used it with Java programming language. Netbeans put in our hand many features to help developers achieving better coding performance.
 \item	Visual studio code: Visual studio code is MIT open source licensed software, developed and maintained by Microsoft. It supports many programming languages with many different technologies just by integrating plugins within it. We used Visual studio code for Angular development. This software supports different platforms, Linux operation system, Windows, MacOS.
 \item	Code Blocks IDE: Code Blocks is an integrated development environment for Fortan, C and C++ programming languages. We used it for C programming.  
-\item	MongoDB: MongoDB is a non-relational database management system based in documents. It provides many advanced features like indexing and advanced operations algorithm to query on the documents. 	To generate analytics with high performance, we need a database that supports well indexes; also we need a database that provides different and flexible querying techniques like map and reduce algorithm. So the better choice for us was MongoDB.
-\item	Apache Tomcat web server: Tomcat is a web server that supports Java web logic. In our case used an embedded Tomcat web server.
+\item	MongoDB: MongoDB is a non-relational database management system based in documents. It provides many advanced features like indexing and advanced operations algorithms to query on the data. 	To generate analytics with high performance, we need a database that supports well indexes; also we need a database that provides different and flexible querying techniques like map and reduce algorithm. So the better choice for us was MongoDB.
+\item	Apache Tomcat web server: Tomcat is a web server that supports Java web logic. In our case, we used an embedded Tomcat web server.
 \item	Postman: Postman allows users to execute and build personalized HTTP requests; to achieve this Postman provides many optional features.
 \item	Thonny: Thonny is an integrated development environment for Python programming language running on Raspbian operating system. We used it to develop our Python scripts.
-\item	Geny: Geny is an integrated development environment that supports many programming languages. This software is running on Raspbian operating system. We used it to develop C programs on RaspBerry Pi board.
+\item	Geny: Geny is an integrated development environment that supports many programming languages. This software is running on Raspbian operating system. We used it to develop C programs on the RaspBerry Pi board.
 \end{itemize}
 
 \subsection{Frameworks and technologies}
@@ -828,21 +833,21 @@ In this section, we discuss the technical choices we made to achieve our final p
 \begin{itemize}
 \item	Java: Java is a general purpose oriented object programming language. We used it to develop the backend of our solution.
 \item	Typescript: Typescript is a programming language developed and maintained by Microsoft. Typescript is an object oriented programming language. We used it to develop our frontend application with Angular.
-\item	Python: Python is a general purpose, high-level programming language. We used it in an embedded environment with Raspberry Pi boards.
-\item	C: C is a procedural and a general purpose programming language. We used it in an embedded environment, with Raspberry Pi boards.
+\item	Python: Python is a general purpose, high-level programming language. We used it in an embedded environment with the Raspberry Pi boards.
+\item	C: C is a procedural and a general purpose programming language. We used it in an embedded environment, with the Raspberry Pi boards.
 \item	Shell script: Shell script is a command line interpreter. We used it to install our embedded application.
 \end{itemize}
 
 \paragraph{Frameworks and technologies}
 ~\\
 \begin{itemize}
-\item	Spring framework: Spring is a Java application framework. Spring allows users to create enterprise services with POJO (Plain Old Java Objects). Spring uses dependency injection technique; also it provides many application configuration features.
+\item	Spring framework: Spring is a Java application framework. Spring allows users to create enterprise services with POJO (Plain Old Java Objects). Spring uses dependency injection technique, it also provides many application configuration features.
 \item	Spring data MongoDB: Spring data MongoDB is a part of Spring data project which aims to provide a Spring-based APIs (Application Programming Interfaces) for new datastores such as MongoDB. It gives the possibility to execute complex queries on MongoDB, especially with Mongo Template\cite{SPRINGDATAMONGODB}.
-\item	Angular 7: Angular is an open source framework developed by Google. Angular is used for frontend application development, it gives the possibility to handle dynamically user interface. Angular is written entirely in Javascript, although it used Typescript as programming language.
+\item	Angular 7: Angular is an open source framework developed by Google. Angular is used for frontend applications development, it gives the possibility to handle dynamically user interfaces. Angular is written entirely in Javascript, although it use Typescript as programming language.
 \item	Apache Kafka: Kafka is distributed, fault-tolerant, horizontally scalable, wicked fast streaming platform. It is used for building real-time data pipelines and streaming applications with publish and subscribe technique. We used it as a middleware between widespread probes and the backend application.
-\item	Kafka Stream: Kafka stream is a client library for building applications where the input and output data messages are stored in Kafka cluster or broker. It allows run real-time processing on the data. We used it for real-time processing.
-•	Google protocol buffer: Protocol buffer is a protocol for structured data serializing, Protocol buffer, also known as Protobuf, supports several programming language such as Java, Objective-C, Python and C++.We used it to on the messages coming from the probes. We used this protocol because it is faster than the ordinary data format like JSON.
-\item	OAuth 2.0: OAuth is a protocol for authorization flows for web application. It is simple for developers to use. We used it for security issues in our web application.
+\item	Kafka Stream: Kafka stream is a client library for building applications where the input and output data messages are stored in Kafka cluster or broker. It allows to run real-time processing on the data. We used it for real-time processing.
+•	Google protocol buffer: Protocol buffer is a protocol for structured data serializing, it also known as Protobuf, it supports several programming languages such as Java, Objective-C, Python and C++.We used it to serialize the messages coming from the probes. We used this protocol because it is faster than the ordinary data format like JSON.
+\item	OAuth 2.0: OAuth is a protocol for authorization flows for web applications. It is simple for developers to use. We used it for security issues in our web application.
 \item	Spring Security: Spring Security is a framework to build applications with powerful and highly customizable authentication and access control\cite{SPRINGSECURITY}.
 \item	Linux Crontab: Crontab is a tool for job and task scheduling on Linux operating system, in our case Raspbian. We used it to schedule test running.
 \item	MXparser: MXparser is a library for mathematical expressions parsing and evaluating. We used it with application features that need formula parsing such the case of alerting constraints.
@@ -851,7 +856,7 @@ In this section, we discuss the technical choices we made to achieve our final p
 
 
 \section{Achieved work}
-\subsection{Authentication and users management}
+\subsection{Authentication and user management}
 Before starting using the application features, an authentication is required; the figure below (fig.\ref{fig:login}) presents the login screen:
 \begin{figure}[H]
 \centering
@@ -866,7 +871,7 @@ The figure (fig.\ref{fig:users}) shows the users list with their information; th
 \caption{Users list screen}
 \label{fig:users}
 \end{figure}
-The figure (fig.\ref{fig:updateuser}) presents user information form, these screen is used for creating and updating users:
+The figure (fig.\ref{fig:updateuser}) presents user information form, these screen is used for creating and updating users accouts:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{updateuser.PNG}
@@ -876,8 +881,8 @@ The figure (fig.\ref{fig:updateuser}) presents user information form, these scre
 
 
 
-\subsection{Devices management}
-As we said the devices module consists of connected devices information and jobs management, the following screen (fig.\ref{fig:device})  presents the devices information list:
+\subsection{Device management}
+As we said the devices module consists of connected device information and job management, the following screen (fig.\ref{fig:device})  presents the devices information list:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{device.PNG}
@@ -900,7 +905,7 @@ The second part of the device configuration is the jobs list, the following figu
 \caption{Crons list screen}
 \label{fig:cron}
 \end{figure}
-Next, this figure (fig.\ref{fig:updatingcron}) describes the job updating operation, as we can see we change the schedules using this screen:
+Next, this figure (fig.\ref{fig:updatingcron}) describes the job updating operation, as we can see we can change the schedules using this screen:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{updatecron.PNG}
@@ -913,8 +918,8 @@ After submitting this form, the new configuration will be sent to the device in 
 
 
 
-\subsection{Metrics and tests management}
-Metrics and test management module is responsible for creating tests for the probes; the following screen (fig.\ref{fig:metric}) shows the tests list:
+\subsection{Metric and test management}
+Metric and test management module is responsible for creating tests for the probes; the following screen (fig.\ref{fig:metric}) shows the tests list:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{metric.PNG}
@@ -928,12 +933,12 @@ To update or create a test, we have this wizard (fig.\ref{fig:wizard}):
 \caption{Test configuring wizard screen}
 \label{fig:wizard}
 \end{figure}
-With this wizard we can create test elements that contain formulas; also we can add new resources to the devices and create test element schedules, and of course we can test each element directly on a connected device.
+With this wizard we can create test elements that contain formulas. Also we can add new resources to the devices and create test element schedules, and of course we can test each element directly on a connected device.
 
 
 
 
-\subsection{Alerts management}
+\subsection{Network monitoring management}
 The network monitoring module consists of creating alerts with customized constraints. The following figure (fig.\ref{fig:alert}) presents the alerts list.
 \begin{figure}[H]
 \centering
@@ -960,7 +965,7 @@ The statistics and dashboard management module consists of testing and creating 
 \caption{Chart customizing screen}
 \label{fig:statistic}
 \end{figure}
-At this point the user has the right to ass this view to the dashboard.
+At this point the user has the right to add this view to the dashboard.
 
 Last but not least we have our dashboard. The figure (fig.\ref{fig:dashboard}) presents an overview of the dashboard:
 \begin{figure}[H]
@@ -1008,10 +1013,10 @@ The charts that we are using in dashboard have several advanced options like dat
 
 
 \section{Conclusion}
-uring this chapter, we presented the technologies that were chosen to implement our project and we argued that choice. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
+during this chapter, we presented the technologies that were chosen to implement our project and we argued that choices. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
 
 \chapter{General Conclusion and Future Work}
-We were focused on solving the broadband supervision and monitoring issue by designing and developing a flexible and easy-to-use platform. As a matter of fact, we implemented a web application that helps network supervisors to assess the quality of service of their networks. This information (quality of service) is provided by data analytics, this data is coming from widespread probes. We designed the platform in order to give users the flexibility they need to manage their tests and devices online.
+We were focused on solving the broadband supervision and monitoring issue by designing and developing a flexible and easy-to-use platform. As a matter of fact, we implemented a web application that helps network supervisors to assess the quality of service of their networks. This information (quality of service) is provided through data analytics, this data is coming from widespread probes. We designed the platform in order to give users the flexibility they need to manage their tests and devices online.
 
 For the graphic user interface, we developed many advanced graphic options to give users better experience with our application.
 
