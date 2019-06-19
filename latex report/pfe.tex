@@ -89,7 +89,7 @@
 \normalsize{Option: Distributed Systems}\\
 ~\\[0.6cm]
 \rule[0.5ex]{1\columnwidth}{1pt}\\[0.5cm]
-{ \huge \bfseries Designing and Developing a platform for remote and communicating equipements }\\[0.5cm]
+{ \huge \bfseries Design and development of a broadband QoS monitoring platform }\\[0.5cm]
 \rule[0.5ex]{1\columnwidth}{1pt}\\[2cm]
 % Author and supervisor
 \center By: Ismail Mekni\\~\\
@@ -119,7 +119,7 @@ To my family and all my beloved.
 
 \chapter*{Acknowledgements}
 
-In conducting this report, I have received meaningful assistance from many quarters which I like to put on record here with deep gratitude and great pleasure.
+In conducting this project, I have received meaningful assistance from many quarters which I like to put on record here with deep gratitude and great pleasure.
 
 First and foremost, I express my sincere gratitude to my supervisors, Mr. Sabri Mtibaa, Ms. Marwa Drissi, and Mr. Aref Meddeb who extended their complete support and helped to make me deliver my best.
 
@@ -146,14 +146,14 @@ With our solution, the user could manage connected probes and create broadband t
 
 
 \section*{Keywords}
-Probe – Spring boot – Angular – Raspberry Pi – Java – Kafka – Broadband – Quality of experience
+Network – Broadband – Quality of service - Quality of experience – Key Performance Indicator – Data analytics
 
 
 
 \pagenumbering{arabic} 
 
 \chapter*{General introduction}
-With the global spread of the internet nowadays, many mobile and internet services operators appear. In the coming days, connected devices will spread massively worldwide, especially with the appearance of new technologies such as the internet of things, big data, personal area networks (PAN), artificial intelligence (AI). So mobile and internet services operators desire to achieve a better quality of service for their customers. To do so, operators design and develop solutions for broadband monitoring and supervision ,mainly, to massively assess and monitor the quality of service of networks access perceived by customers. Sofrecom Tunisia, subsidiary of Orange Group, attempts to serve this purpose by designing and developing a platform for broadband supervision and monitoring and specifically  to massively assess the quality of service (QoS) of fixed network access. In this context comes our mission during the graduation project internship.
+With the global spread of the internet nowadays, many mobile and internet services operators appear. In the coming days, connected devices will spread massively worldwide, especially with the appearance of new technologies such as the internet of things, big data, personal area networks (PAN), artificial intelligence (AI). So mobile and internet services operators desire to achieve a better quality of service for their customers. To do so, operators design and develop solutions for broadband monitoring and supervision ,mainly, to massively assess and monitor the quality of service of networks access perceived by customers. Sofrecom Tunisia, subsidiary of Orange Group, attempts to serve this purpose by designing and developing a platform, "SMAQ Probes", for broadband supervision and monitoring and specifically  to massively assess the quality of service (QoS) of fixed network access. In this context comes our mission during the graduation project internship.
 
 This report contains four chapters as follows:
 
@@ -168,7 +168,6 @@ At last but not least, the final chapter “Project achievements” will be abou
 Finally, we will close the report with a general conclusion. Future work and perspectives will be mentioned at last to give some ideas to improve our solution.
 
 \chapter{Project Context}
-\section{Introduction}
 
 In the first place, this chapter will be about the host company, Sofrecom Tunisia presentation, a consulting and engineering firm specializing in telecommunications. Then, we will talk about work and project environments, by putting the light on the project goals and the analysis of the state of the art. Finally, we will present our software development methodology and the modeling language that we are going to use.
 
@@ -185,9 +184,9 @@ In order to get the accurate information about the quality of experience, we sho
 
 
 \subsection{Project objectives}
-This work will be considered as a graduation project to obtain applied computer science diploma from the national engineering school of Sousse (ENISO).
+This work will be considered as a graduation project to obtain applied computer science engineering degree from the national engineering school of Sousse (ENISO).
 
-The main project goal is to design and develop a platform for remote and communicating devices, to serve broadband monitoring and supervision. The application should satisfy these needs:
+The main project goal is to design and develop a platform for remote and communicating devices, to serve broadband monitoring and supervision. SMAQ Probes application should satisfy these needs:
 \begin{itemize}
 \item The creation and interpretation of messages exchanged with terminals and embedded equipments.
 \item Information exchanges with client applications (northbound interface).
@@ -241,6 +240,7 @@ SMAQ is a solution implemented by Sofrecom to generate reports and analysis base
 The following table shows in detail the differences between the two mentioned solutions:
 \begin{table}[H]
 \centering
+\caption{Comparison of state of the art}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 Solution                       & SamKnows One & SMAQ \\ \hline
@@ -254,7 +254,6 @@ User management              & YES          & NO \\ \hline
 Device management              & NO          & NO \\ \hline
 Test management              & NO          & NO \\ \hline
 \end{tabular}
-\caption{Comparison of state of the art}
 \label{my-label}
 \end{table}
 
@@ -296,7 +295,6 @@ In the next chapter, we will model the requirements of our solution through use 
 
 \chapter{Requirements Analysis and Specification}
 
-\section{Introduction}
 
 The requirements analysis and specification phase is an essential step for the development of a new application. It allows presenting the application’s features in detail.
 
@@ -382,6 +380,7 @@ As shown in the general use case diagram (fig.\ref{fig:usecasegeneral}), only th
 
 \begin{table}[H]
 \centering
+\caption{Device management description}
 \begin{tabular}{|l|l|}
 \hline
 Title             & Device management                                                                                                                                                                                                                                                                                    \\ \hline
@@ -396,7 +395,6 @@ Story             & \begin{tabular}[c]{@{}l@{}}1. The user enters device new con
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}The device in question is not connected; the configuration’s\\ message will be suspended waiting the device to reconnect.\end{tabular} \\ \hline
 \end{tabular}
-\caption{Device management description}
 \label{my-label}
 \end{table}
 
@@ -413,6 +411,7 @@ As shown in the devices management sequence diagram (fig.\ref{fig:devicesequence
 
 \begin{table}[H]
 \centering
+\caption{Test management description}
 \begin{tabular}{|l|l|}
 \hline
 Title             & Test management                                                                                                                                                                                                                                                                                    \\ \hline
@@ -428,7 +427,6 @@ Story             & \begin{tabular}[c]{@{}l@{}}1. The user tests each element di
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}There is no connected device, so user can’t test elements,\\ the operation with be suspended until at least one device\\ reconnects.\end{tabular} \\ \hline
 \end{tabular}
-\caption{Test management description}
 \label{my-label}
 \end{table}
 
@@ -445,6 +443,7 @@ As shown above in the diagram (fig.\ref{fig:testsequence}), the access to the te
 
 \begin{table}[H]
 \centering
+\caption{Network monitoring management description}
 \begin{tabular}{|l|l|}
 \hline
 Title             & Network monitoring management
@@ -461,7 +460,6 @@ Story             & \begin{tabular}[c]{@{}l@{}}1. The user send alert configurat
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}\end{tabular} \\ \hline
 \end{tabular}
-\caption{Network monitoring management description}
 \label{my-label}
 \end{table}
 
@@ -478,6 +476,7 @@ As shown in the diagram (fig.\ref{fig:monitoringsequence}), the user authenticat
 
 \begin{table}[H]
 \centering
+\caption{Chart management description}
 \begin{tabular}{|l|l|}
 \hline
 Title             & Chart and statistic management
@@ -494,7 +493,6 @@ Story             & \begin{tabular}[c]{@{}l@{}}1. The user send chart configurat
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}\end{tabular} \\ \hline
 \end{tabular}
-\caption{Chart management description}
 \label{my-label}
 \end{table}
 
@@ -511,6 +509,7 @@ As we can see in the above sequence diagram (fig.\ref{fig:chartssequence}), to a
 
 \begin{table}[H]
 \centering
+\caption{User management description}
 \begin{tabular}{|l|l|}
 \hline
 Title             & User management
@@ -528,7 +527,6 @@ Story             & \begin{tabular}[c]{@{}l@{}}1. The administrator submits user
 Alternative story & \begin{tabular}[c]{@{}l@{}}\end{tabular}                                                                                                                                                                            \\ \hline
 Exceptional story & \begin{tabular}[c]{@{}l@{}}If the user enters invalid credentials, he will be prompted to \\try to login again.\end{tabular} \\ \hline
 \end{tabular}
-\caption{User management description}
 \label{my-label}
 \end{table}
 
@@ -543,7 +541,6 @@ The next chapter aims to go a step further in the process of developing the appl
 
 \chapter{Design of the Physical and Logical Architectures}
 
-\section{Introduction}
 In order to reach the appropriate result as described in the specifications, we need to clarify the project’s main architecture as well as the architecture of its components. This chapter will focus on designing a suitable structure for the broadband monitoring and supervision system. This step is considered as the most crucial of the process because it prepares the ground for the implementation phase.
 
 \section{Physical architecture}
@@ -763,9 +760,9 @@ The user configuration consists of creating a personalized user account that hol
 The administrator just needs to fill the form with the user information. After finishing, a request is sent to the backend application in order to persist these information. At this point, the user is able to authenticate.
 
 
-\subsection{Broadband supervision and monitoring theory}
+\subsection{Broadband supervision and monitoring process}
 In the previous parts of the report we talked about the features offered by our solution concerning analytics and management of each component, although we did not emphasize the real-time network monitoring and metrics data processing. Also we need to clarify how the probes are handling tests and received configurations.
-
+ 	
 \paragraph{Tests and jobs handling between probes and Kafka}
 ~\\
 We are using Kafka as a mediator between the server and the probes. For every reboot, devices send their initial information to Kafka, in the counterpart, the devices receives their personalized configurations, these configurations holds within it personalized  jobs and tests. The embedded application schedules the jobs using Crontab\cite{CRONTAB}. There is a listener implemented on the boards in order to wait for configuration changes. The following (fig.\ref{fig:scriptskafka}) illustrates the interactions between a probe and Kafka. 
@@ -795,10 +792,9 @@ Through this chapter, we described each part of the solution, its functionalitie
 
 \chapter{Project Achievements}
 
-\section{Introduction}
 In this chapter, we will discuss the process of implementing the different parts of the system. We start by presenting the different tools both software and hardware used in every task in order to complete the implementation process.
 
-\section{Developing environment}
+\section{Development environment}
 \subsection{Hardware envionment}
 To achieve our project development, we have used a DELL computer with a Windows 7 operating system. The characteristics of the used computer are provided below:
 \begin{itemize}
@@ -1013,7 +1009,7 @@ The charts that we are using in dashboard have several advanced options like dat
 
 
 \section{Conclusion}
-during this chapter, we presented the technologies that were chosen to implement our project and we argued that choices. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
+During this chapter, we presented the technologies that were chosen to implement our project and we argued that choices. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
 
 \chapter{General Conclusion and Future Work}
 We were focused on solving the broadband supervision and monitoring issue by designing and developing a flexible and easy-to-use platform. As a matter of fact, we implemented a web application that helps network supervisors to assess the quality of service of their networks. This information (quality of service) is provided through data analytics, this data is coming from widespread probes. We designed the platform in order to give users the flexibility they need to manage their tests and devices online.
@@ -1026,84 +1022,41 @@ As every project can be enhanced and expanded, various perspectives are imminent
 
 
 \begin{thebibliography}{9}
-\bibitem{SAMKNOWS} 
-SamKnows. \\
-\textit{Samknows tests}. \\
-\href{https://samknows.com/technology/tests}{https://samknows.com/technology/tests}.
+\bibitem{SAMKNOWS}
+Samknows.com. (2019). SamKnows. [online] Available at: \href{https://samknows.com/technology/tests}{https://samknows.com/technology/tests}S [Accessed 19 Jun. 2019].\\
 
 
 
 \bibitem{SPRINGDATAMONGODB}  
-Mark Pollack,
-Thomas Risberg,
-Oliver Gierke,
-Costin Leau,
-Jon Brisbin,
-Thomas Darimont,
-Christoph Strobl,
-Mark Paluch,
-Jay Bryant.
-\\
-\textit{Spring Data MongoDB - Reference Documentation}\\
-\href{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/}{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/}.
+Mark Pollack, J. (2019). Spring Data MongoDB - Reference Documentation. [online] Docs.spring.io. Available at: \href{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/}{https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{KAFKASTREAM} 
-Apache Sotware Foundation. \\
-\textit{Kafka Streams
-}. \\
-\href{https://docs.confluent.io/current/streams/index.html}
-{https://docs.confluent.io/current/streams/index.html}.
-
+Docs.confluent.io. (2019). Documentation — Confluent Platform. [online] Available at: \href{https://docs.confluent.io/current/streams/index.html}{https://docs.confluent.io/current/streams/index.html}. [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{RDKAFKA} 
-edenhill Github. \\
-\textit{librdkafka the Apache Kafka C/C++ client library
-}. \\
-\href{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html}
-{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html}.
+Docs.confluent.io. (2019). librdkafka: librdkafka documentation. [online] Available at: \href{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html}{https://docs.confluent.io/2.0.0/clients/librdkafka/index.html} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{SPRINGSECURITY} 
-Eugen Paraschiv. \\
-\textit{Using JWT with Spring Security OAuth
-}. \\
-\href{https://www.baeldung.com/spring-security-oauth-jwt}
-{https://www.baeldung.com/spring-security-oauth-jwt}.
-
+Paraschiv, E. (2019). Using JWT with Spring Security OAuth | Baeldung. [online] Baeldung. Available at: \href{https://www.baeldung.com/spring-security-oauth-jwt}{https://www.baeldung.com/spring-security-oauth-jwt} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{MONGODB} 
-MongoDB. \\
-\textit{Indexes
-}. \\
-\href{https://docs.mongodb.com/manual/indexes/}
-{https://docs.mongodb.com/manual/indexes/}.
+Docs.mongodb.com. (2019). Indexes — MongoDB Manual. [online] Available at: \href{https://docs.mongodb.com/manual/indexes/}{https://docs.mongodb.com/manual/indexes/} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{ECHARTS} 
-ECHARTS Community. \\
-\textit{ECHARTS
-}. \\
-\href{https://echarts.apache.org/en/index.html}
-{https://echarts.apache.org/en/index.html}.
+Echarts.apache.org. (2019). ECharts. [online] Available at: \href{https://echarts.apache.org/en/index.html}{https://echarts.apache.org/en/index.html} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{ANGULAR} 
- Google. \\
-\textit{Angular 7
-}. \\
-\href{https://v7.angular.io/docs}
-{https://v7.angular.io/docs}.
+V7.angular.io. (2019). Angular. [online] Available at: \href{https://v7.angular.io/docs}{https://v7.angular.io/docs} [Accessed 19 Jun. 2019].\\
 
 
 \bibitem{CRONTAB} 
- Python community. \\
-\textit{python-crontab 2.3.6
-}. \\
-\href{https://pypi.org/project/python-crontab/}
-{https://pypi.org/project/python-crontab/}.
+PyPI. (2019). python-crontab. [online] Available at: \href{https://pypi.org/project/python-crontab/}{https://pypi.org/project/python-crontab/} [Accessed 19 Jun. 2019].
 
 \end{thebibliography}
 
