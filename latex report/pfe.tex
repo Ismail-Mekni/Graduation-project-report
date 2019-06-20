@@ -12,6 +12,7 @@
 \setlength{\parindent}{0pt}
 \usepackage{color}
 \usepackage{babel}
+\usepackage{arabtex}
 \makeatletter
 
 \makeatother
@@ -146,8 +147,20 @@ With our solution, the user could manage connected probes and create broadband t
 
 
 \section*{Keywords}
-Network – Broadband – Quality of service - Quality of experience – Key Performance Indicator – Data analytics
+Network – Broadband – Quality of service - Quality of experience – Key Performance Indicators – Data analytics
 
+
+
+\chapter*{Résumé}
+Ce rapport décrit la conception et le développement du projet de notre stage de fin d'études, qui est effectué chez Sofrecom Tunisie. Il consiste à créer une plateforme d’équipements distants et communicants permettant de superviser et de contrôler le haut débit et d'évaluer la qualité de service « QoS ».
+
+Avec notre solution, l'utilisateur peut gérer les sondes connectées et exécuter des tests pour apprécier la qualité de service du réseau perçue par les clients. Il peut également gérer la configuration statistique des résultats de tests avec des graphiques attrayants. Les utilisateurs peuvent configurer des alertes personnalisées afin de simplifier la supervision du haut débit. Le projet aide également les superviseurs de réseau à obtenir des statistiques précises en fonction des zones de localisation et des périodes temporelle.
+
+
+
+
+\section*{Mots clés}
+Sonde – Haut débit – Qualité de service – Qualité d’expérience – Indicateurs clé de performance – Analyse des donnés
 
 
 \pagenumbering{arabic} 
@@ -853,21 +866,18 @@ In this section, we discuss the technical choices we made to achieve our final p
 
 \section{Achieved work}
 \subsection{Authentication and user management}
-Before starting using the application features, an authentication is required; the figure below (fig.\ref{fig:login}) presents the login screen:
-\begin{figure}[H]
-\centering
-\includegraphics[width=15cm]{login.PNG}
-\caption{Authentication screen}
-\label{fig:login}
-\end{figure}
-The figure (fig.\ref{fig:users}) shows the users list with their information; this screen is only accessible from an administrator account:	
+The figure (fig.\ref{fig:users}) shows the users list with their information; this screen is only accessible from an administrator account:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{user.PNG}
 \caption{Users list screen}
 \label{fig:users}
 \end{figure}
-The figure (fig.\ref{fig:updateuser}) presents user information form, these screen is used for creating and updating users accouts:
+When installing the application for the first time there is a default administrator account. With this account, the application administrator can create the accounts for the network supervisors and the network and broadband administrators.
+
+With the above screen (fig.\ref{fig:users}), we can access to the user creation form.
+This screen (fig.\ref{fig:updateuser}) is used for creating and updating users:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{updateuser.PNG}
@@ -875,74 +885,135 @@ The figure (fig.\ref{fig:updateuser}) presents user information form, these scre
 \label{fig:updateuser}
 \end{figure}
 
+This form holds the user information, the username, the password and the privilege are essential for user creation.
+
+If a user is registered successfully, an authentication is required before starting using the application features, the figure below (fig.\ref{fig:login}) presents the authentication screen:
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{login.PNG}
+\caption{Authentication screen}
+\label{fig:login}
+\end{figure}
+
+If the user enters the right credentials, the application redirects him to the dashboard screen, else an error message is shown in the login screen. If the access is granted to the user, he can use the application features depending on his role.
 
 
 \subsection{Device management}
-As we said the devices module consists of connected device information and job management, the following screen (fig.\ref{fig:device})  presents the devices information list:
+
+After authentication, to start using all the application features, the probes, in our case Raspberry Pi boards, must be connected in addition to the installation of the embedded application.
+
+When the probe is connected, it sends its information to the application, the information contains the IP address, the device identifier, the device position, the client name and the running tasks on it. If the application receives the device information, the tasks and the configuration that concerns this device is sent to it for implementation. The device information is persisted to MongoDB. Now, the devices configuration can be displayed to the application users, shown in figure (fig.\ref{fig:device}) below:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{device.PNG}
 \caption{Devices list screen}
 \label{fig:device}
 \end{figure}
-As we can see we can navigate to jobs list using this screen.
 
-The following figure (fig.\ref{fig:updatingdevice}) presents device updating screen:
+With the previous screen, we can navigate to the updating screen of a specified device, the figure below (fig.\ref{fig:updatingdevice}) presents the device updating form, this form contains the general information of the probe.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{updatedevice.PNG}
 \caption{Device updating screen}
 \label{fig:updatingdevice}
 \end{figure}
-The second part of the device configuration is the jobs list, the following figure (fig.\ref{fig:cron}) presents the jobs list of a chosen device:
+
+
+After updating the device information, the new configuration is persisted to MongoDB.
+
+With the device list screen, we navigate to the running jobs of a specified probe, as shown below in (fig.\ref{fig:cron}):
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{cron.PNG}
 \caption{Crons list screen}
 \label{fig:cron}
 \end{figure}
-Next, this figure (fig.\ref{fig:updatingcron}) describes the job updating operation, as we can see we can change the schedules using this screen:
+
+
+With the previous figure (fig.\ref{fig:cron}), we can update the configuration of the device jobs. A job configuration is essentially the job status and the job frequency. For the job frequency, we are using the task scheduler Crontab. The figure below (fig.\ref{fig:updatingcron}) presents the job updating screen:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{updatecron.PNG}
 \caption{Cron updating screen}
 \label{fig:updatingcron}
 \end{figure}
-After submitting this form, the new configuration will be sent to the device in question.
+AAfter submitting this form, the new jobs configuration is sent to the device in question in order to implements it.
 
-
-
+The device jobs include the running tests, we next section is about how to manipulate these tests.
 
 
 \subsection{Metric and test management}
-Metric and test management module is responsible for creating tests for the probes; the following screen (fig.\ref{fig:metric}) shows the tests list:
+The metric and test management are the feature that gives the possibility to the network and broadband administrator to manipulate the tests running on the probes. The figure below (fig.\ref{fig:metric}) presents the list of tests already created and running on the devices:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{metric.PNG}
 \caption{Tests list screen}
 \label{fig:metric}
 \end{figure}
-To update or create a test, we have this wizard (fig.\ref{fig:wizard}):
+
+Using the previous figure, we can access to the creation screen of the tests. The process of test creation goes through several steps, these steps are illustrated in a wizard as described next.
+
+First, we have the form that contains the general information of the test, its name, the unit that is used for the metrics of the test, and the job scheduling mode. If the job scheduling mode is enabled, each element of the test runs in a specified order. The figure below (fig.\ref{fig:generalmetric}) presents the general test information form:
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm]{wizard.png}
-\caption{Test configuring wizard screen}
-\label{fig:wizard}
+\includegraphics[width=15cm]{generalcreatemetric.PNG}
+\caption{Test general information form}
+\label{fig:generalmetric}
 \end{figure}
-With this wizard we can create test elements that contain formulas. Also we can add new resources to the devices and create test element schedules, and of course we can test each element directly on a connected device.
+
+Now the user should enter the elements of the test. An element can be a Linux command line that runs an available script or an existing program. To complete this step, we must have a least one connected device, this device is used to test the elements on it. After entering the command line and the script, if we need it, we run the command on the available device. The test result is shown in the command output field. The network and broadband supervisor highlight the needed metric value. Here the system creates a parsing key that is used to extract the desired results in the process. We repeat this process for all the test elements. The figure below (fig.\ref{fig:commandmetric}) shows the form that contains the element information.
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{commandcreatemetric.PNG}
+\caption{Test elment configuration form}
+\label{fig:commandmetric}
+\end{figure}
+
+To improve the use of our application, the network and broadband administrator has the possibility to configure some formulas that use the already configured test metrics. These formulas help us get more relevant results about the QoS. The figure (fig.\ref{fig:formulametric}) presents the form that is used to enter formula configuration. We have used a drag and drop component to give the network and broadband administrator a better experience with the application.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{formulacreatemetric.PNG}
+\caption{Test formula configuration form}
+\label{fig:formulametric}
+\end{figure}
+
+The last step is the test elements scheduling, this step is only activated if the job scheduling mode is enabled. In this step, we have all the test element information displayed in the screen. The network and broadband administrator enters the schedule of each element in seconds. The test elements run on the probe according to the specified order. The figure below (fig.\ref{fig:schedulingmetric}) presents the form in question: 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{schedulingcreatemetric.PNG}
+\caption{Test element scheduling configuration form}
+\label{fig:schedulingmetric}
+\end{figure}
+
+Finally, the network and broadband administrator confirms the test configuration. This new configuration is persisted to MongoDB and it is sent to the involved devices in order to be considered. This test is added to the jobs of devices.
 
 
 \subsection{Network monitoring management}
-The network monitoring module consists of creating alerts with customized constraints. The following figure (fig.\ref{fig:alert}) presents the alerts list.
+Until now we have the connected devices list, and we have the running tests configurations. In this part, we talk about the network monitoring and the alert management. First, we have the figure (fig.\ref{fig:alert}) that shows the list of the configured alerts.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{alert.PNG}
 \caption{Alerts list screen}
 \label{fig:alert}
 \end{figure}
-The following form (fig.\ref{fig:createalert}) illustrates alerts creation. The constraint field must have a logic expression as input. To facilitate the task we are using drag and drop module with personalized elements:
+
+As we can see, with the above screen we have the access to create and update the alerts configurations.
+The figure below (fig.\ref{fig:createalert}) shows the alert form configuration:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{createalert.PNG}
@@ -950,66 +1021,89 @@ The following form (fig.\ref{fig:createalert}) illustrates alerts creation. The 
 \label{fig:createalert}
 \end{figure}
 
-
+To create an alert, we have the general information of the alert, the title, the description that is shown when the alert is triggered. An alert is created according to a specified test and metric configuration, so the network and broadband administrator should choose a specified test for the alert. The test metrics names are shown. Finally, the network and broadband administrator must specify the constraint of alert triggering. This constraint is a logic formula composed using the configured metrics of the specified test. The network and broadband administrator submits the configuration details, this configuration is persisted to MongoDB. The alert configuration is fetched in the real-time processing with Kafka Stream, the constraint is tested according to the involved metrics, if the constraint is satisfied, the alert is triggered with the custom description.
 
 
 \subsection{Statistics and dashboard management}
-The statistics and dashboard management module consists of testing and creating customized charts to be visualized by network supervisors on the dashboard. The following figure (fig.\ref{fig:statistic}) presents the chart generation process:
+
+The following screen (fig.\ref{fig:statistic}) presents the views and charts configuration:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{statistics.PNG}
 \caption{Chart customizing screen}
 \label{fig:statistic}
 \end{figure}
-At this point the user has the right to add this view to the dashboard.
 
-Last but not least we have our dashboard. The figure (fig.\ref{fig:dashboard}) presents an overview of the dashboard:
+A chart is configured according to a test configuration. In the left side we have the list of the tests’ configuration with its metrics. Also, we have two fields, the first one is titled “Metrics to visualize” and the second one is titled “Metrics with aggregation to visualize. If the network and broadband administrator drops the metric in the first field, the chart shows the metric values by time. If the network and broadband administrator drop the metric in the second field, the chart shows the values according to an aggregation operator, the sum, the mean, the maximum, or the minimum, with a specified period. If the network and broadband administrator desires to add the chart to the dashboard, he clicks on the “Add to dashboard” button. The configuration of the chart is persisted to MongoDB. So, with this configuration we can generate the views on the dashboard.
+
+The figure (fig.\ref{fig:dashboard}) presents an overview of the dashboard:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{dashboard.PNG}
 \caption{Online dashboard screen}
 \label{fig:dashboard}
 \end{figure}
-The following filters are already implemented in the dashboard. The following screen (fig.\ref{fig:timefilter}) presents the time period filter:
+
+As we can see in the dashboard, we have the views that we saved its configurations. Also, we have the triggered alerts that we saved its configurations. To generate the different views, we have to use the available filters, the time filter, the zone filter and the test filter.
+
+The following screen \ref{fig:timefilter}) presents the time filter:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{timefilter.PNG}
 \caption{Time period filter}
 \label{fig:timefilter}
 \end{figure}
-The following figure (fig.\ref{fig:locationfilter}) presents the location filter. This filter gives the hand to users to get the charts according zone area:
+
+This filter specifies the period of time that we use to generate the statistics according to it. We use for this a time range picker. With this filter we can get relevant statistics about the QoS.
+
+The following figure (fig.\ref{fig:locationfilter}) presents the zone filter:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{locationfilter.PNG}
 \caption{Devices filter}
 \label{fig:locationfilter}
 \end{figure}
-To give the user more information about the quality of experience, we implemented a comparison filters that generates charts to compare between periods and zones (fig.\ref{fig:comparingfilter}):
+
+As mentioned before, we have the information about the devices’ positions. Using the position information, we can locate the probes on the map. The network supervisor can select an area on the map. SMAQ Probes generates the statistics using the devices that are located in the specified area. This filter allows the network supervisor to evaluate the QoS in a specified area.
+
+The following figure (fig.\ref{fig:comparingfilter}) shows the comparison filters.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{comparingfilter.PNG}
 \caption{Comparison filters}
 \label{fig:comparingfilter}
 \end{figure}
-A part of the dashboard is reserved for alerts. The user can access to an alert details as follows in (fig.\ref{fig:alertdetail}):
+
+By clicking the “Compare to” button, an additional filter is shown, using these filters, the system generates charts that includes a comparison between two different results. This feature gives the possibility to the network supervisor to compare between different QoS information, this helps him improve the network service.
+
+The following screen (fig.\ref{fig:alertdetail}) shows a sample of a triggered alert information:
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{alertdetail.PNG}
 \caption{Triggered alert detail screen}
 \label{fig:alertdetail}
 \end{figure}
-The charts that we are using in dashboard have several advanced options like data zooming, data visualizing and bar chart support\cite{ECHARTS}. The following figure fig.\ref{fig:chart}) is a sample:
+
+In the real-time processing, when an alert is triggered, the alert holds within it the detailed information about the metric value that satisfied the constraint. This feature helps the network supervisor to get quick information about the broadband network problems.
+
+The charts that we are using in dashboard have several advanced options like data zooming, data visualizing and bar chart support\cite{ECHARTS}. The following figure fig.\ref{fig:chart}) is a sample, this figure presents the upload speed metrics values during a specified period of time, the upload speed is a metric from the throughput test:
 \begin{figure}[H]
 \centering
 \includegraphics[width=15cm]{charts.PNG}
-\caption{Implemented chart}
+\caption{Upload speed chart}
 \label{fig:chart}
 \end{figure}
 
 
 
 \section{Conclusion}
-During this chapter, we presented the technologies that were chosen to implement our project and we argued that choices. We also presented the used frameworks and we finished by displaying the main features and interfaces of our components.
+During this chapter, we presented the technologies that were chosen to implement the project features and we argued that choice for the different components of the project. We also presented the used frameworks and tools, and we finished by displaying the main features and interfaces from SMAQ Probes application.
 
 \chapter{General Conclusion and Future Work}
 We were focused on solving the broadband supervision and monitoring issue by designing and developing a flexible and easy-to-use platform. As a matter of fact, we implemented a web application that helps network supervisors to assess the quality of service of their networks. This information (quality of service) is provided through data analytics, this data is coming from widespread probes. We designed the platform in order to give users the flexibility they need to manage their tests and devices online.
