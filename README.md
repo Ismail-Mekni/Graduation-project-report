@@ -1,2 +1,2 @@
-# Graduation-project-report
-My graduation project report
+# Graduation project report
+Computer science graduation project report with LaTex.
